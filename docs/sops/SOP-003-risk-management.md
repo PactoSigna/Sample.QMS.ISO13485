@@ -1,77 +1,92 @@
 ---
-documentId: SOP-003
-title: Risk Management Procedure
-docType: sop
-status: draft
-effectiveDate: null
-version: "0.1"
+id: SOP-003
+title: Risk Management
+status: approved
+author: quality@example.com
+reviewers:
+  - engineering
+approvers:
+  - quality-lead
 ---
 
-# SOP-003: Risk Management Procedure
+# SOP-003: Risk Management
 
-## 1. Purpose
+## Purpose
 
-This procedure defines the process for identifying, analyzing, evaluating, controlling, and monitoring risks associated with medical devices throughout their lifecycle.
+Define the risk management process for medical device software per ISO 14971:2019.
 
-## 2. Scope
+## Scope
 
-<!-- TODO: Define scope of risk management activities -->
+Applies to all identified hazards and risks throughout the product lifecycle.
 
-## 3. Definitions
+## Responsibilities
 
-| Term | Definition |
-|------|------------|
-| Harm | Physical injury or damage to health of people, property, or environment |
-| Hazard | Potential source of harm |
-| Risk | Combination of probability of harm and severity of harm |
-| Residual Risk | Risk remaining after implementation of risk control measures |
+- **Risk Manager**: Coordinates risk management activities
+- **Engineering**: Identifies hazards and implements controls
+- **Quality**: Reviews risk acceptability
 
-## 4. Responsibilities
+## Procedure
 
-<!-- TODO: Define roles and responsibilities -->
+### 1. Hazard Identification
 
-## 5. Procedure
+1. Analyze each software requirement for potential failures
+2. Create hazard documents (HAZ-XX-XXX) in appropriate category:
+   - Software hazards: `risk/software/HAZ-SW-XXX.md`
+   - Usability hazards: `risk/usability/HAZ-US-XXX.md`
+   - Security hazards: `risk/security/HAZ-SEC-XXX.md`
+3. Link hazard to analyzed item using `analyzes:` in frontmatter
 
-### 5.1 Risk Management Planning
+### 2. Hazard Analysis
 
-<!-- TODO: Define risk management planning -->
+For each hazard, document:
 
-### 5.2 Risk Analysis
+- Failure mode and cause
+- Detection method
+- Hazardous situations (`**Leads to:**` links to HS-XXX)
 
-<!-- TODO: Define risk analysis methods (FMEA, FTA, etc.) -->
+### 3. Risk Estimation
 
-### 5.3 Risk Evaluation
+1. Create hazardous situation documents (HS-XXX) with probability
+2. Create harm documents (HARM-XXX) with severity
+3. Calculate risk = severity x probability
 
-<!-- TODO: Define risk evaluation criteria -->
+### 4. Risk Evaluation
 
-### 5.4 Risk Control
+1. Create risk analysis documents (RISK-XX-XXX)
+2. Link to hazard, situation, and harm
+3. Determine if inherent risk is acceptable
 
-<!-- TODO: Define risk control option analysis and implementation -->
+### 5. Risk Control
 
-### 5.5 Residual Risk Evaluation
+For unacceptable risks:
 
-<!-- TODO: Define residual risk assessment -->
+1. Identify control measures (requirements that mitigate)
+2. Document controls in risk analysis with heading format:
+   `### [SRS-XXX](path) - Control Name`
+3. Specify what the control reduces: `sequence_probability`, `harm_probability`, or `severity`
 
-### 5.6 Risk-Benefit Analysis
+### 6. Residual Risk
 
-<!-- TODO: Define overall risk-benefit analysis -->
+1. Re-estimate probability after controls
+2. Document residual risk assessment
+3. If still unacceptable, provide risk-benefit analysis
 
-### 5.7 Risk Management Report
+## Risk Document Structure
 
-<!-- TODO: Define risk management report requirements -->
+```
+docs/risk/
+├── software/       # HAZ-SW-*, RISK-SW-*
+├── usability/      # HAZ-US-*, RISK-US-*
+├── security/       # HAZ-SEC-*, RISK-SEC-*
+├── situations/     # HS-*
+└── harms/          # HARM-*
+```
 
-### 5.8 Production and Post-Production Information
+## Related Documents
 
-<!-- TODO: Define post-market surveillance integration -->
+- [SOP-002](SOP-002-design-development.md) - Design and Development
 
-## 6. References
+## References
 
-- ISO 14971:2019 - Application of Risk Management to Medical Devices
-- ISO 13485:2016 Section 7.1 - Planning of Product Realization
-- 21 CFR Part 820.30(g) - Design Validation
-
-## 7. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
+- ISO 14971:2019
+- IEC 62304:2006+A1:2015 Section 7

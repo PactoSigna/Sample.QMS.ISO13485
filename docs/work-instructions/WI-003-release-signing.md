@@ -1,55 +1,69 @@
 ---
-documentId: WI-003
-title: Release Signature Workflow
-docType: work-instruction
-status: draft
-effectiveDate: null
-version: "0.1"
+id: WI-003
+title: Release Signing
+status: approved
+author: quality@example.com
+reviewers:
+  - engineering
+approvers:
+  - quality-lead
 ---
 
-# WI-003: Release Signature Workflow
+# WI-003: Release Signing
 
-## 1. Purpose
+## Purpose
 
-This work instruction provides step-by-step guidance for applying signatures to software releases in PactoSigna.
+Step-by-step instructions for electronically signing software releases per 21 CFR Part 11.
 
-## 2. Scope
+## Prerequisites
 
-<!-- TODO: Define scope -->
+- All release documents approved
+- All verification activities complete
+- Risk management file complete
+- User has release authority
 
-## 3. Prerequisites
+## Procedure
 
-<!-- TODO: Define prerequisites -->
+### 1. Create Release
 
-## 4. Procedure
+1. Navigate to Releases section in PactoSigna
+2. Click "Create Release"
+3. Enter release version and description
+4. Select documents to include
 
-### 4.1 Accessing Releases
+### 2. Verify Completeness
 
-<!-- TODO: Define access procedure -->
+System validates:
 
-### 4.2 Reviewing Release Content
+- All required document types present
+- All documents in approved status
+- Traceability complete (no gaps)
+- Risk controls verified
 
-<!-- TODO: Define review steps -->
+### 3. Sign Release
 
-### 4.3 Applying Release Signature
+1. Review release summary
+2. Select signature meaning:
+   - "I authorize this release for production"
+3. Authenticate with password
+4. Confirm electronic signature
 
-<!-- TODO: Define signature process -->
+### 4. Post-Release
 
-### 4.4 Signature Roles
+1. Release status changes to "Released"
+2. Audit log captures all signatures
+3. Release becomes immutable
+4. Notification sent to stakeholders
 
-<!-- TODO: Define signature roles (Author, Reviewer, Approver) -->
+## Signature Requirements
 
-### 4.5 Release Completion
+Per 21 CFR Part 11:
 
-<!-- TODO: Define release completion criteria -->
+- Signature includes printed name, date/time, meaning
+- Signatures are linked to their respective documents
+- Signed records cannot be modified
 
-## 5. References
+## Related Documents
 
-- SOP-001: Document Control Procedure
-- 21 CFR Part 11: Electronic Records; Electronic Signatures
-
-## 6. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
+- [SOP-002](../sops/SOP-002-design-development.md) - Design and Development
+- [WI-002](WI-002-document-approval.md) - Document Approval

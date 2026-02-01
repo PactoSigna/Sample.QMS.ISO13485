@@ -1,78 +1,70 @@
 ---
-documentId: SOP-002
-title: Design and Development Procedure
-docType: sop
-status: draft
-effectiveDate: null
-version: "0.1"
+id: SOP-002
+title: Design and Development
+status: approved
+author: engineering@example.com
+reviewers:
+  - quality
+approvers:
+  - engineering-lead
 ---
 
-# SOP-002: Design and Development Procedure
+# SOP-002: Design and Development
 
-## 1. Purpose
+## Purpose
 
-This procedure defines the process for planning and controlling the design and development of medical device software products.
+Define the design and development process for medical device software per IEC 62304 and ISO 13485.
 
-## 2. Scope
+## Scope
 
-<!-- TODO: Define scope of design and development activities -->
+Applies to all software development activities for regulated medical devices.
 
-## 3. Definitions
+## Responsibilities
 
-| Term | Definition |
-|------|------------|
-| Design Input | Requirements and specifications that define the product |
-| Design Output | Deliverables that result from design activities |
-| Design Review | Documented evaluation of design results |
-| Design Verification | Confirmation that outputs meet inputs |
-| Design Validation | Confirmation that product meets user needs |
+- **Product Owner**: Defines user needs and product requirements
+- **Engineering**: Implements software requirements and architecture
+- **Quality**: Ensures process compliance and traceability
 
-## 4. Responsibilities
+## Procedure
 
-<!-- TODO: Define roles and responsibilities -->
+### 1. Design Input
 
-## 5. Procedure
+1. Capture user needs (UN-XXX documents)
+2. Derive product requirements (PRS-XXX documents)
+3. Derive software requirements (SRS-XXX documents)
+4. Establish traceability using markdown links
 
-### 5.1 Design Planning
+### 2. Design Process
 
-<!-- TODO: Define design planning activities -->
+1. Create architecture documents (HLD-XXX)
+2. Create detailed design documents (SDD-XXX)
+3. Implement per design specifications
+4. Maintain traceability to requirements
 
-### 5.2 Design Inputs
+### 3. Design Verification
 
-<!-- TODO: Define design input requirements -->
+1. Create test cases (TC-XXX) that verify requirements
+2. Execute tests and document results
+3. Link test cases to requirements with `**Verifies:**` links
 
-### 5.3 Design Outputs
+### 4. Design Validation
 
-<!-- TODO: Define design output requirements -->
+1. Validate against user needs
+2. Link test cases to user needs with `**Validates:**` links
+3. Document validation evidence
 
-### 5.4 Design Reviews
+### 5. Design Transfer
 
-<!-- TODO: Define design review process -->
+1. Complete all verification activities
+2. Complete risk management activities
+3. Approve release per [WI-003](../work-instructions/WI-003-release-signing.md)
 
-### 5.5 Design Verification
+## Related Documents
 
-<!-- TODO: Define verification activities -->
+- [SOP-003](SOP-003-risk-management.md) - Risk Management
+- [WI-001](../work-instructions/WI-001-github-pr-review.md) - GitHub PR Review
 
-### 5.6 Design Validation
+## References
 
-<!-- TODO: Define validation activities -->
-
-### 5.7 Design Transfer
-
-<!-- TODO: Define design transfer process -->
-
-### 5.8 Design Changes
-
-<!-- TODO: Define design change control -->
-
-## 6. References
-
-- ISO 13485:2016 Section 7.3 - Design and Development
-- IEC 62304:2006+AMD1:2015 - Medical Device Software Lifecycle
-- 21 CFR Part 820.30 - Design Controls
-
-## 7. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
+- IEC 62304:2006+A1:2015
+- ISO 13485:2016 Section 7.3
