@@ -1,59 +1,56 @@
 ---
-documentId: WI-002
-title: Document Approval in PactoSigna
-docType: work-instruction
-status: draft
-effectiveDate: null
-version: "0.1"
+id: WI-002
+title: Document Approval
+status: approved
+author: quality@example.com
+reviewers:
+  - engineering
+approvers:
+  - quality-lead
 ---
 
-# WI-002: Document Approval in PactoSigna
+# WI-002: Document Approval
 
-## 1. Purpose
+## Purpose
 
-This work instruction provides step-by-step guidance for approving documents using PactoSigna's electronic signature functionality.
+Step-by-step instructions for approving controlled documents in PactoSigna.
 
-## 2. Scope
+## Prerequisites
 
-<!-- TODO: Define scope -->
+- Document has completed review per [WI-001](WI-001-github-pr-review.md)
+- User has approver role for document type
 
-## 3. Prerequisites
+## Procedure
 
-<!-- TODO: Define prerequisites -->
+### 1. Navigate to Document
 
-## 4. Procedure
+1. Log into PactoSigna
+2. Navigate to Documents section
+3. Find document pending approval
 
-### 4.1 Accessing Documents for Approval
+### 2. Review Document
 
-<!-- TODO: Define access procedure -->
+1. Read document content carefully
+2. Verify all review comments addressed
+3. Confirm document meets requirements
 
-### 4.2 Reviewing Document Content
+### 3. Approve Document
 
-<!-- TODO: Define review steps -->
+1. Click "Approve" button
+2. Select signature meaning:
+   - "I have reviewed and approve this document"
+   - "I am the author and certify accuracy"
+3. Authenticate with password
+4. Confirm signature
 
-### 4.3 Applying Electronic Signature
+### 4. Verify Status
 
-<!-- TODO: Define signature process -->
+1. Document status changes to "Approved"
+2. Audit log entry created
+3. Approvers listed in signature block
 
-### 4.4 Signature Meaning Selection
+## Related Documents
 
-<!-- TODO: Define signature meaning options -->
-
-### 4.5 Confirmation and Audit Trail
-
-<!-- TODO: Define confirmation process -->
-
-## 5. References
-
-- SOP-001: Document Control Procedure
-- 21 CFR Part 11: Electronic Records; Electronic Signatures
-
-## 6. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
-
-## Links
-
-- child_of: SOP-001
+- [SOP-001](../sops/SOP-001-document-control.md) - Document Control
+- [WI-001](WI-001-github-pr-review.md) - GitHub PR Review
+- [WI-003](WI-003-release-signing.md) - Release Signing
