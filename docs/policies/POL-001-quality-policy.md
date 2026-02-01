@@ -1,52 +1,57 @@
 ---
-documentId: POL-001
+id: POL-001
 title: Quality Policy
-docType: policy
-status: draft
-effectiveDate: null
-version: "0.1"
+status: approved
+author: quality@example.com
+reviewers:
+  - management
+approvers:
+  - ceo
 ---
 
-# POL-001: Quality Policy
+# Quality Policy
 
-## Quality Policy Statement
+## Policy Statement
 
-<!-- TODO: Insert organization's quality policy statement -->
+PactoSigna Medical Devices is committed to designing, developing, and maintaining safe and effective medical device software that meets customer needs and regulatory requirements.
 
-[Organization Name] is committed to:
+We achieve this through:
 
-- Designing and developing safe and effective medical devices
-- Meeting customer requirements and applicable regulatory requirements
-- Maintaining an effective Quality Management System
-- Continuously improving processes and products
+- Rigorous design controls per ISO 13485 and IEC 62304
+- Comprehensive risk management per ISO 14971
+- Continuous improvement of our Quality Management System
+- Employee training and competency development
 
 ## Quality Objectives
 
-<!-- TODO: Define measurable quality objectives -->
-
-1. Objective 1: [Description] - Target: [Metric]
-2. Objective 2: [Description] - Target: [Metric]
-3. Objective 3: [Description] - Target: [Metric]
+1. **Product Safety**: Zero critical defects escaping to production
+2. **Regulatory Compliance**: 100% conformance to applicable standards
+3. **Customer Satisfaction**: Resolve customer issues within 48 hours
+4. **Process Improvement**: Complete at least 2 process improvements per quarter
 
 ## Management Commitment
 
-<!-- TODO: Document management commitment -->
+Management commits to:
+
+- Providing resources for QMS maintenance
+- Reviewing quality objectives quarterly
+- Ensuring regulatory requirements are understood
+- Promoting continuous improvement culture
 
 ## Communication
 
-<!-- TODO: Define how quality policy is communicated -->
+This policy is communicated to all employees through:
+
+- New employee orientation
+- Annual training refreshers
+- Posted in common areas and intranet
 
 ## Review
 
-This policy shall be reviewed annually for continued suitability.
+This policy is reviewed annually by the Quality Management Representative.
 
 ## References
 
-- ISO 13485:2016 Section 5.3 - Quality Policy
-- 21 CFR Part 820.20 - Management Responsibility
-
-## Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
+- [SOP-001](../sops/SOP-001-document-control.md) - Document Control
+- ISO 13485:2016 Section 5.3
+- 21 CFR Part 820.20
