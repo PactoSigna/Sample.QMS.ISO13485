@@ -1,76 +1,76 @@
 ---
-documentId: SOP-004
-title: Corrective and Preventive Action (CAPA) Procedure
-docType: sop
-status: draft
-effectiveDate: null
-version: "0.1"
+id: SOP-004
+title: Corrective and Preventive Action
+status: approved
+author: quality@example.com
+reviewers:
+  - engineering
+approvers:
+  - quality-lead
 ---
 
-# SOP-004: Corrective and Preventive Action (CAPA) Procedure
+# SOP-004: Corrective and Preventive Action (CAPA)
 
-## 1. Purpose
+## Purpose
 
-This procedure defines the process for identifying, investigating, and resolving quality problems through corrective and preventive actions.
+Define the process for identifying, investigating, and resolving quality issues through corrective and preventive actions.
 
-## 2. Scope
+## Scope
 
-<!-- TODO: Define scope of CAPA activities -->
+Applies to all nonconformances, customer complaints, audit findings, and process improvements.
 
-## 3. Definitions
+## Responsibilities
 
-| Term | Definition |
-|------|------------|
-| Corrective Action | Action to eliminate the cause of a detected nonconformity |
-| Preventive Action | Action to eliminate the cause of a potential nonconformity |
-| Root Cause | Fundamental reason for a nonconformity |
-| CAPA | Corrective and Preventive Action |
+- **CAPA Owner**: Investigates issue and implements actions
+- **Quality**: Tracks CAPA status and verifies effectiveness
+- **Management**: Reviews CAPA trends quarterly
 
-## 4. Responsibilities
+## Procedure
 
-<!-- TODO: Define roles and responsibilities -->
+### 1. Issue Identification
 
-## 5. Procedure
+Sources of CAPA initiation:
 
-### 5.1 CAPA Initiation
+- Customer complaints
+- Internal/external audit findings
+- Nonconforming product
+- Process deviations
+- Risk management findings
 
-<!-- TODO: Define CAPA initiation criteria and process -->
+### 2. Investigation
 
-### 5.2 Investigation
+1. Document the problem description
+2. Perform root cause analysis (5 Whys, fishbone, etc.)
+3. Identify extent of the problem
+4. Document investigation findings
 
-<!-- TODO: Define investigation requirements -->
+### 3. Action Planning
 
-### 5.3 Root Cause Analysis
+1. Define corrective action to address root cause
+2. Define preventive action to prevent recurrence
+3. Assign owners and target dates
+4. Identify verification criteria
 
-<!-- TODO: Define root cause analysis methods -->
+### 4. Implementation
 
-### 5.4 Action Planning
+1. Execute planned actions
+2. Update affected documents per [SOP-001](SOP-001-document-control.md)
+3. Provide training if required
+4. Document completion evidence
 
-<!-- TODO: Define action planning requirements -->
+### 5. Verification
 
-### 5.5 Implementation
+1. Verify actions were implemented as planned
+2. Verify actions were effective
+3. Close CAPA if effective
+4. Escalate if not effective
 
-<!-- TODO: Define implementation requirements -->
+## Related Documents
 
-### 5.6 Verification of Effectiveness
+- [SOP-001](SOP-001-document-control.md) - Document Control
+- [POL-001](../policies/POL-001-quality-policy.md) - Quality Policy
 
-<!-- TODO: Define effectiveness verification -->
+## References
 
-### 5.7 CAPA Closure
-
-<!-- TODO: Define closure criteria -->
-
-### 5.8 Management Review
-
-<!-- TODO: Define management review of CAPA trends -->
-
-## 6. References
-
-- ISO 13485:2016 Section 8.5 - Improvement
-- 21 CFR Part 820.100 - Corrective and Preventive Action
-
-## 7. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1 | [Date] | [Author] | Initial draft |
+- ISO 13485:2016 Section 8.5
+- 21 CFR Part 820.100
