@@ -7,6 +7,13 @@ reviewers:
   - engineering
 approvers:
   - quality-lead
+training:
+  required_departments:
+    - Engineering
+    - Quality
+    - Regulatory
+  training_mode: quiz
+  due_days: 30
 ---
 
 # SOP-003: Risk Management

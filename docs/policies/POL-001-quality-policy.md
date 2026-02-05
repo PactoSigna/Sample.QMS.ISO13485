@@ -7,6 +7,15 @@ reviewers:
   - management
 approvers:
   - ceo
+training:
+  required_departments:
+    - Engineering
+    - Quality
+    - Regulatory
+    - Clinical
+    - Security
+  training_mode: acknowledge
+  due_days: 14
 ---
 
 # Quality Policy

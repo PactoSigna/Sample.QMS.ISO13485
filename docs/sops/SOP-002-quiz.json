@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What are the primary regulatory standards governing medical device software design and development?",
+      "options": [
+        { "text": "IEC 62304 and ISO 13485", "correct": true, "explanation": "SOP-002 defines the process per IEC 62304 and ISO 13485." },
+        { "text": "ISO 9001 and ISO 14001", "explanation": "ISO 9001 is a general quality standard and ISO 14001 is environmental management." },
+        { "text": "IEC 61508 and ISO 26262", "explanation": "These standards apply to functional safety in industrial/automotive, not medical devices." },
+        { "text": "FDA CFR Part 820 only", "explanation": "While Part 820 applies, the SOP specifically references IEC 62304 and ISO 13485." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the correct sequence for design input documents?",
+      "options": [
+        { "text": "SRS → PRS → UN", "explanation": "The sequence flows from user needs downward, not upward." },
+        { "text": "UN → PRS → SRS", "correct": true, "explanation": "User Needs (UN) are captured first, then Product Requirements (PRS), then Software Requirements (SRS)." },
+        { "text": "PRS → UN → SRS", "explanation": "User Needs must be captured before deriving product requirements." },
+        { "text": "SRS → UN → PRS", "explanation": "Software requirements are derived last, after user needs and product requirements." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How are test cases linked to requirements for design verification?",
+      "options": [
+        { "text": "Using 'Validates:' links", "explanation": "'Validates:' links are used for validation against user needs, not verification." },
+        { "text": "Using 'Verifies:' links", "correct": true, "explanation": "Test cases use 'Verifies:' links to demonstrate requirements are met." },
+        { "text": "Using 'References:' links", "explanation": "'References:' is not the standard link type for verification traceability." },
+        { "text": "Using 'Traces:' links", "explanation": "'Traces:' is not the standard link type used in the QMS." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Design validation confirms that the product meets software requirements.",
+      "correct": false,
+      "explanation": "Design validation confirms the product meets user needs. Design verification confirms software requirements are met."
+    },
+    {
+      "type": "single-choice",
+      "text": "What must be completed before design transfer (release)?",
+      "options": [
+        { "text": "Verification activities only", "explanation": "Both verification and risk management must be complete." },
+        { "text": "Risk management activities only", "explanation": "Both verification and risk management must be complete." },
+        { "text": "All verification and risk management activities", "correct": true, "explanation": "Per the Design Transfer section, all verification and risk management activities must be complete." },
+        { "text": "Customer acceptance testing", "explanation": "Customer acceptance is not listed as a prerequisite for design transfer." }
+      ]
+    }
+  ]
+}

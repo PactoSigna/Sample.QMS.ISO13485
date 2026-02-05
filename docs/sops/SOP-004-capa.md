@@ -7,6 +7,12 @@ reviewers:
   - engineering
 approvers:
   - quality-lead
+training:
+  required_departments:
+    - Quality
+    - Engineering
+  training_mode: quiz
+  due_days: 30
 ---
 
 # SOP-004: Corrective and Preventive Action (CAPA)

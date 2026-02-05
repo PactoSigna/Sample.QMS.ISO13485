@@ -7,6 +7,13 @@ reviewers:
   - engineering
 approvers:
   - quality-lead
+training:
+  required_departments:
+    - Quality
+    - Engineering
+    - Regulatory
+  training_mode: acknowledge
+  due_days: 14
 ---
 
 # WI-002: Document Approval
