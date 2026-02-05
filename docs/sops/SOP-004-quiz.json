@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "multi-choice",
+      "text": "Which of the following are valid sources for CAPA initiation? (Select all that apply)",
+      "options": [
+        { "text": "Customer complaints", "correct": true, "explanation": "Customer complaints are a defined CAPA source." },
+        { "text": "Internal/external audit findings", "correct": true, "explanation": "Audit findings are a defined CAPA source." },
+        { "text": "Risk management findings", "correct": true, "explanation": "Risk management findings are a defined CAPA source." },
+        { "text": "Employee performance reviews", "explanation": "Performance reviews are not listed as a CAPA initiation source." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the first step in the CAPA investigation process?",
+      "options": [
+        { "text": "Perform root cause analysis", "explanation": "Root cause analysis is step 2; documenting the problem comes first." },
+        { "text": "Document the problem description", "correct": true, "explanation": "Per the Investigation section, documenting the problem description is the first step." },
+        { "text": "Assign owners and target dates", "explanation": "Assigning owners happens during action planning, not investigation." },
+        { "text": "Define corrective action", "explanation": "Corrective actions are defined during action planning, after investigation." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What happens if a CAPA is verified as not effective?",
+      "options": [
+        { "text": "Close the CAPA anyway", "explanation": "Ineffective CAPAs must not be closed." },
+        { "text": "Escalate", "correct": true, "explanation": "Per the Verification section, if not effective the CAPA must be escalated." },
+        { "text": "Delete the CAPA record", "explanation": "CAPA records must be maintained for audit purposes." },
+        { "text": "Wait 30 days and re-check", "explanation": "The SOP requires escalation, not waiting." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Affected documents should be updated per SOP-001 (Document Control) during CAPA implementation.",
+      "correct": true,
+      "explanation": "Per the Implementation section, affected documents are updated per SOP-001."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which root cause analysis techniques are mentioned in the CAPA procedure?",
+      "options": [
+        { "text": "5 Whys and fishbone diagram", "correct": true, "explanation": "The Investigation section lists '5 Whys, fishbone, etc.' as root cause analysis techniques." },
+        { "text": "Pareto analysis and scatter plot", "explanation": "These are statistical tools not specifically mentioned in the SOP." },
+        { "text": "Monte Carlo simulation", "explanation": "Monte Carlo simulation is not mentioned in the CAPA procedure." },
+        { "text": "Design of experiments (DOE)", "explanation": "DOE is not mentioned in the CAPA procedure." }
+      ]
+    }
+  ]
+}

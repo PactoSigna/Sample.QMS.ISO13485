@@ -7,6 +7,12 @@ reviewers:
   - engineering
 approvers:
   - quality-lead
+training:
+  required_departments:
+    - Engineering
+    - Quality
+  training_mode: instructor_led
+  due_days: 14
 ---
 
 # WI-003: Release Signing

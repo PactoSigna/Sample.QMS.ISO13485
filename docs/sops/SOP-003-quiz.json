@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the primary standard governing medical device risk management?",
+      "options": [
+        { "text": "ISO 14971:2019", "correct": true, "explanation": "SOP-003 defines the risk management process per ISO 14971:2019." },
+        { "text": "ISO 13485:2016", "explanation": "ISO 13485 is the quality management system standard." },
+        { "text": "IEC 62304:2006", "explanation": "IEC 62304 governs software lifecycle, not risk management specifically." },
+        { "text": "21 CFR Part 820", "explanation": "Part 820 is the FDA QSR; ISO 14971 is the risk management standard." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How is risk calculated?",
+      "options": [
+        { "text": "Severity x Probability", "correct": true, "explanation": "Risk is calculated as severity multiplied by probability." },
+        { "text": "Severity + Probability", "explanation": "Risk is a product, not a sum, of severity and probability." },
+        { "text": "Severity x Detection", "explanation": "Detection is part of FMEA, but ISO 14971 risk uses severity x probability." },
+        { "text": "Probability / Severity", "explanation": "Risk is severity multiplied by probability, not divided." }
+      ]
+    },
+    {
+      "type": "multi-choice",
+      "text": "Which categories of hazards are tracked in the risk document structure? (Select all that apply)",
+      "options": [
+        { "text": "Software hazards (HAZ-SW)", "correct": true, "explanation": "Software hazards are tracked in risk/software/." },
+        { "text": "Usability hazards (HAZ-US)", "correct": true, "explanation": "Usability hazards are tracked in risk/usability/." },
+        { "text": "Security hazards (HAZ-SEC)", "correct": true, "explanation": "Security hazards are tracked in risk/security/." },
+        { "text": "Environmental hazards (HAZ-ENV)", "explanation": "Environmental hazards are not a defined category in this QMS." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What should be done when residual risk remains unacceptable after applying controls?",
+      "options": [
+        { "text": "Accept the risk without documentation", "explanation": "Unacceptable residual risk requires documented risk-benefit analysis." },
+        { "text": "Provide a risk-benefit analysis", "correct": true, "explanation": "Per Section 6, if residual risk is still unacceptable, a risk-benefit analysis must be provided." },
+        { "text": "Remove the feature entirely", "explanation": "Feature removal may be an option but the SOP requires risk-benefit analysis first." },
+        { "text": "Escalate to regulatory authority", "explanation": "Internal risk-benefit analysis is required before any regulatory escalation." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Risk control measures are documented using the heading format '### [SRS-XXX](path) - Control Name' in risk analysis documents.",
+      "correct": true,
+      "explanation": "Per Section 5, controls are documented with this specific heading format linking to the requirement that mitigates the risk."
+    }
+  ]
+}

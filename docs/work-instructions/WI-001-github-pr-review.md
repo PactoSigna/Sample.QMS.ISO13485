@@ -7,6 +7,11 @@ reviewers:
   - quality
 approvers:
   - engineering-lead
+training:
+  required_departments:
+    - Engineering
+  training_mode: instructor_led
+  due_days: 14
 ---
 
 # WI-001: GitHub Pull Request Review

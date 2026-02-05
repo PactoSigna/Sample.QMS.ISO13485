@@ -7,6 +7,12 @@ reviewers:
   - quality
 approvers:
   - engineering-lead
+training:
+  required_departments:
+    - Engineering
+    - Quality
+  training_mode: quiz
+  due_days: 30
 ---
 
 # SOP-002: Design and Development

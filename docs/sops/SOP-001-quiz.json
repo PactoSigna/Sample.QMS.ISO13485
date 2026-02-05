@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the correct naming convention for Standard Operating Procedures?",
+      "options": [
+        { "text": "SOP-XXX", "correct": true, "explanation": "SOPs follow the SOP-XXX naming convention as defined in Section 1." },
+        { "text": "POL-XXX", "explanation": "POL-XXX is the naming convention for Policies." },
+        { "text": "WI-XXX", "explanation": "WI-XXX is the naming convention for Work Instructions." },
+        { "text": "DOC-XXX", "explanation": "DOC-XXX is not a valid naming convention in the QMS." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How are document changes submitted for review?",
+      "options": [
+        { "text": "Email to quality team", "explanation": "Changes are submitted via GitHub Pull Requests, not email." },
+        { "text": "GitHub Pull Request", "correct": true, "explanation": "Authors submit changes via GitHub Pull Requests as defined in the Review Process." },
+        { "text": "Upload to shared drive", "explanation": "The QMS uses Git-based version control, not shared drives." },
+        { "text": "Direct edit in production", "explanation": "Direct production edits bypass the required review and approval process." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the initial status of a newly created document?",
+      "options": [
+        { "text": "approved", "explanation": "New documents must go through review and approval before reaching approved status." },
+        { "text": "draft", "correct": true, "explanation": "Per Section 1, initial status is set to 'draft'." },
+        { "text": "in_review", "explanation": "Documents start as draft before entering review." },
+        { "text": "pending", "explanation": "The correct initial status is 'draft'." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A document can be merged to the main branch before all approvers have signed off.",
+      "correct": false,
+      "explanation": "Per the Approval Process, all reviewers must approve and approvers must sign off before the PR is merged."
+    },
+    {
+      "type": "single-choice",
+      "text": "Who is responsible for maintaining the document control system?",
+      "options": [
+        { "text": "Engineering", "explanation": "Engineering creates content but does not maintain the document control system." },
+        { "text": "Quality", "correct": true, "explanation": "Per the Responsibilities section, Quality maintains the document control system." },
+        { "text": "Document Author", "explanation": "Authors create and maintain document content, not the control system." },
+        { "text": "Reviewers", "explanation": "Reviewers verify technical accuracy, not maintain the system." }
+      ]
+    }
+  ]
+}
