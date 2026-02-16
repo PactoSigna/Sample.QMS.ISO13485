@@ -2,7 +2,7 @@
 
 **ISO 13485 Quality Management System Procedures**
 
-This repository contains a foundational Quality Management System (QMS) structure with Standard Operating Procedures (SOPs), work instructions, and templates aligned with ISO 13485:2016 requirements.
+This repository contains a foundational Quality Management System (QMS) with Standard Operating Procedures (SOPs), work instructions, policies, audit reports, and training quizzes aligned with ISO 13485:2016 requirements.
 
 ## Purpose
 
@@ -38,23 +38,39 @@ Use your preferred AI assistant to adapt this QMS for your organization. Example
 
 ```
 docs/
-├── sops/                           # Standard Operating Procedures
-│   ├── SOP-001-document-control.md    # Document Control procedure
-│   ├── SOP-002-design-development.md  # Design & Development
-│   ├── SOP-003-risk-management.md     # Risk Management
-│   └── SOP-004-capa.md                # CAPA procedure
+├── sops/                              # Standard Operating Procedures
+│   ├── SOP-001-document-control.md       # Document Control
+│   ├── SOP-001-quiz.json                 # Training quiz for SOP-001
+│   ├── SOP-002-design-development.md     # Design & Development
+│   ├── SOP-002-quiz.json                 # Training quiz for SOP-002
+│   ├── SOP-003-risk-management.md        # Risk Management
+│   ├── SOP-003-quiz.json                 # Training quiz for SOP-003
+│   ├── SOP-004-capa.md                   # CAPA
+│   └── SOP-004-quiz.json                 # Training quiz for SOP-004
 │
-├── work-instructions/              # Work Instructions
-│   ├── WI-001-github-pr-review.md     # GitHub PR review workflow
-│   ├── WI-002-document-approval.md    # Document approval in PactoSigna
-│   └── WI-003-release-signing.md      # Release signature workflow
+├── work-instructions/                 # Work Instructions
+│   ├── WI-001-github-pr-review.md        # GitHub PR review workflow
+│   ├── WI-002-document-approval.md       # Document approval in PactoSigna
+│   └── WI-003-release-signing.md         # Release signature workflow
 │
-├── policies/                       # Quality Policies
-│   └── POL-001-quality-policy.md      # Quality Policy statement
+├── policies/                          # Quality Policies
+│   └── POL-001-quality-policy.md         # Quality Policy statement
 │
-└── templates/                      # Document Templates
-    ├── TMPL-001-change-request.md     # Change Request form
-    └── TMPL-002-training-log.md       # Training log template
+└── audits/                            # Audit Reports
+    ├── AUD-2026-001.md                   # Internal Audit Report 2026
+    └── audit-report.pdf                  # Source PDF
+```
+
+## Document Hierarchy
+
+```
+Quality Manual (implied)
+    │
+    ├── Policies (POL-xxx)
+    │       │
+    │       └── SOPs (SOP-xxx) ← with training quizzes (SOP-xxx-quiz.json)
+    │               │
+    │               └── Work Instructions (WI-xxx)
 ```
 
 ## ISO 13485 Clause Coverage
@@ -65,29 +81,29 @@ docs/
 | 7.1 | Planning of Product Realization | SOP-002 |
 | 7.3 | Design and Development | SOP-002, WI-001 |
 | 7.5 | Production and Service Provision | WI-002, WI-003 |
-| 8.2 | Monitoring and Measurement | SOP-003 |
+| 8.2 | Monitoring and Measurement | SOP-003, AUD-2026-001 |
 | 8.5 | Improvement | SOP-004 |
 
-## Document Status
+## Training Quizzes
 
-| Document | Status | Description |
-|----------|--------|-------------|
-| SOP-001, WI-001 | Complete | Fully written examples |
-| All others | Skeleton | Template structure for you to complete |
+Each SOP has an associated training quiz JSON file (e.g., `SOP-001-quiz.json`) used for training compliance in PactoSigna. When a document with `training_mode: quiz` is published, team members in the required departments are assigned the quiz.
 
-## Document Hierarchy
+**Quiz file format:** `{SOP-ID}-quiz.json` alongside the SOP markdown file.
 
-```
-Quality Manual (implied)
-    │
-    ├── Policies (POL-xxx)
-    │       │
-    │       └── SOPs (SOP-xxx)
-    │               │
-    │               └── Work Instructions (WI-xxx)
-    │                       │
-    │                       └── Templates (TMPL-xxx)
-```
+**Question types:** `single-choice`, `multi-choice`, `true-false`
+
+Each quiz defines a `passingScore` (percentage) and an array of `questions`. Options include an `explanation` field shown after the learner answers, reinforcing correct understanding.
+
+## Audit Reports
+
+The `docs/audits/` folder contains internal audit reports. Each audit document references a source PDF and links to the SOPs and work instructions that were audited. Audit reports support ISO 13485 Clause 8.2 (Internal Audits) and provide traceability to the procedures being evaluated.
+
+## CI / Validation
+
+This repository includes a GitHub Actions workflow at `.github/workflows/qms-validate.yml` that:
+
+- **On pull request** (changes to `docs/`): Validates document frontmatter, structure, and traceability links using [PactoSigna/qms-actions](https://github.com/PactoSigna/qms-actions)
+- **On release**: Exports the QMS documentation package
 
 ## License
 
