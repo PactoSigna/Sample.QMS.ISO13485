@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What must be done before deploying to production?",
+      "options": [
+        { "text": "Deploy directly to production for fastest delivery", "explanation": "Direct production deployment bypasses staging verification." },
+        { "text": "Deploy to staging first and execute smoke tests", "correct": true, "explanation": "Per Section 5.4, software must be deployed to staging first with smoke tests before promotion to production." },
+        { "text": "Get verbal approval from engineering", "explanation": "Quality must approve deployment via the deployment checklist." },
+        { "text": "Send an email to the team", "explanation": "Email notification is not a substitute for the formal deployment process." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Which integrity verification is included with every release artifact?",
+      "options": [
+        { "text": "MD5 checksum", "explanation": "The SOP specifies SHA-256, not MD5." },
+        { "text": "SHA-256 hash", "correct": true, "explanation": "Per Section 5.1, every build output includes a SHA-256 integrity hash of all artifacts." },
+        { "text": "Digital photograph", "explanation": "Photographs are not used for software integrity verification." },
+        { "text": "No integrity verification required", "explanation": "Integrity hashes are required per the build process." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "If a critical issue is found after deployment, the first action is to create a CAPA.",
+      "correct": false,
+      "explanation": "Per Section 5.5, the first action is to assess severity and scope, then execute a rollback to the previous known-good version. A nonconformance report and CAPA come after containment."
+    },
+    {
+      "type": "single-choice",
+      "text": "What versioning scheme is used for product releases?",
+      "options": [
+        { "text": "Date-based versioning (YYYY.MM.DD)", "explanation": "The SOP specifies semantic versioning, not date-based." },
+        { "text": "Sequential numbering (1, 2, 3)", "explanation": "Simple sequential numbering is not the specified scheme." },
+        { "text": "Semantic versioning (MAJOR.MINOR.PATCH)", "correct": true, "explanation": "Per Section 5.3, version numbers follow semantic versioning (MAJOR.MINOR.PATCH)." },
+        { "text": "Git commit SHA only", "explanation": "The commit SHA is a build identifier, not the version number." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Who approves a deployment to production?",
+      "options": [
+        { "text": "Engineering only", "explanation": "Engineering executes deployments but Quality provides approval." },
+        { "text": "Quality", "correct": true, "explanation": "Per Section 5.4, Quality approves deployment after verifying the deployment checklist is complete." },
+        { "text": "The developer who wrote the code", "explanation": "The developer cannot self-approve a deployment." },
+        { "text": "No approval required for automated deployments", "explanation": "All production deployments require Quality approval regardless of automation." }
+      ]
+    }
+  ]
+}

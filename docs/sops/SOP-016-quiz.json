@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "How often are Key Quality Indicators reported on the Quality Dashboard?",
+      "options": [
+        { "text": "Weekly", "explanation": "The Quality Dashboard is updated monthly, not weekly." },
+        { "text": "Monthly", "correct": true, "explanation": "Per Section 5.4, the Quality Dashboard is published monthly for all departments." },
+        { "text": "Quarterly", "explanation": "Quarterly is the frequency for the Quarterly Quality Report, not the dashboard." },
+        { "text": "Annually", "explanation": "Annual frequency applies to the Annual Quality Trend Report." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the escalation threshold for CAPA closure rate?",
+      "options": [
+        { "text": "Below 95%", "explanation": "The target is ≥ 90% but the escalation threshold is lower." },
+        { "text": "Below 90%", "explanation": "90% is the target, not the escalation threshold." },
+        { "text": "Below 80%", "correct": true, "explanation": "Per Section 5.2, CAPA closure rate escalation is triggered when it falls below 80%." },
+        { "text": "Below 70%", "explanation": "70% is below the escalation threshold of 80%." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "When an adverse trend is identified that may have a safety impact, it must be escalated to risk management.",
+      "correct": true,
+      "explanation": "Per Section 5.5, if an adverse trend is safety-related, it is escalated to risk management for a file update."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which analysis method is used to identify the top contributors to complaints?",
+      "options": [
+        { "text": "Trend charts", "explanation": "Trend charts monitor KQIs over time but do not rank contributors." },
+        { "text": "Pareto analysis", "correct": true, "explanation": "Per Section 5.3, Pareto analysis is used to identify top contributors to complaints, defects, and nonconformances." },
+        { "text": "SWOT analysis", "explanation": "SWOT analysis is a strategic planning tool, not used for quality data analysis." },
+        { "text": "Monte Carlo simulation", "explanation": "Monte Carlo simulation is not listed as an analysis method in this SOP." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Data analysis outputs serve as input to which process?",
+      "options": [
+        { "text": "Purchasing only", "explanation": "While supplier data is one input, data analysis feeds into management review." },
+        { "text": "Management review", "correct": true, "explanation": "Per Section 5.6, data analysis outputs are a required input to management review per SOP-006." },
+        { "text": "Document control only", "explanation": "Data analysis inputs to management review, not document control specifically." },
+        { "text": "Marketing", "explanation": "Marketing is not a QMS process recipient of data analysis outputs." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "A change that modifies a risk control measure is classified as:",
+      "options": [
+        { "text": "Minor change", "explanation": "Changes affecting risk controls are always classified as major." },
+        { "text": "Major change", "correct": true, "explanation": "Per Section 5.2, any change involving new or modified risk controls is classified as a major change." },
+        { "text": "Emergency change", "explanation": "Emergency is not a classification in this SOP; changes are major or minor." },
+        { "text": "Depends on the developer's assessment", "explanation": "Classification follows defined criteria, not individual judgment." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the minimum verification requirement for a minor change?",
+      "options": [
+        { "text": "No verification needed", "explanation": "All changes require at least unit testing and regression testing." },
+        { "text": "Unit testing and regression testing", "correct": true, "explanation": "Per Section 5.6, minor changes require unit testing (required) and regression testing." },
+        { "text": "Full system testing", "explanation": "Full system testing is required for major changes, not minor ones." },
+        { "text": "Design review only", "explanation": "Design review is not required for minor changes; testing is." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A UI text correction with no safety impact requires cross-functional review board approval.",
+      "correct": false,
+      "explanation": "Per Section 5.2, documentation corrections and UI-only changes with no safety impact are classified as minor changes. Cross-functional review board approval is only required for major changes."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is NOT a valid source for a change request?",
+      "options": [
+        { "text": "CAPA outcomes", "explanation": "CAPA outcomes are a valid source per Section 5.1." },
+        { "text": "Customer feedback", "explanation": "Customer feedback is a valid source per Section 5.1." },
+        { "text": "Developer personal preference", "correct": true, "explanation": "Change requests must originate from defined sources: CAPA, feedback, regulatory changes, PMS findings, improvement initiatives, or security vulnerabilities." },
+        { "text": "Security vulnerability discoveries", "explanation": "Security vulnerabilities are a valid source per Section 5.1." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What additional step is required for major changes that is not required for minor changes?",
+      "options": [
+        { "text": "Writing code", "explanation": "Both major and minor changes involve implementation." },
+        { "text": "Regulatory assessment of submission impact", "correct": true, "explanation": "Per Section 5.6, major changes require regulatory assessment, while minor changes do not." },
+        { "text": "Creating a Git branch", "explanation": "Both types of changes use feature branches." },
+        { "text": "Running unit tests", "explanation": "Unit tests are required for both major and minor changes." }
+      ]
+    }
+  ]
+}
