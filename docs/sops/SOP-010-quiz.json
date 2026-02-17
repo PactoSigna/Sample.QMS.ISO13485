@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "Within how many business days must a potential complaint be logged after receipt?",
+      "options": [
+        { "text": "Same day", "explanation": "While prompt logging is important, the requirement is within 1 business day." },
+        { "text": "1 business day", "correct": true, "explanation": "Per Section 5.3, all potential complaints are logged within 1 business day of receipt." },
+        { "text": "3 business days", "explanation": "3 business days is the assessment timeframe, not the logging timeframe." },
+        { "text": "5 business days", "explanation": "5 business days exceeds the logging requirement." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the maximum investigation time for a critical complaint?",
+      "options": [
+        { "text": "5 days", "explanation": "5 days is not the investigation timeframe for critical complaints." },
+        { "text": "15 days", "correct": true, "explanation": "Per Section 5.5, critical complaint investigations must be completed within 15 days." },
+        { "text": "30 days", "explanation": "30 days is the standard timeframe; critical complaints require 15 days." },
+        { "text": "60 days", "explanation": "60 days exceeds the allowed investigation period." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A feature request from a customer should be classified as a complaint.",
+      "correct": false,
+      "explanation": "Per Section 3, a complaint alleges deficiencies in the device. A feature request is feedback, not a complaint. However, if a feature request reveals a safety concern, it should be escalated for complaint evaluation."
+    },
+    {
+      "type": "single-choice",
+      "text": "How often are complaint trends analyzed?",
+      "options": [
+        { "text": "Monthly", "explanation": "Monthly analysis exceeds the minimum requirement." },
+        { "text": "Quarterly", "correct": true, "explanation": "Per Section 5.8, complaint trends are analyzed quarterly." },
+        { "text": "Annually", "explanation": "Annual analysis does not meet the quarterly requirement." },
+        { "text": "Only during management reviews", "explanation": "Trend analysis is quarterly; results feed into management review." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What must happen immediately when a critical complaint is received?",
+      "options": [
+        { "text": "Notify the CEO", "explanation": "CEO notification is not the immediate required action." },
+        { "text": "Issue a product recall", "explanation": "Recalls are not automatic; assessment must occur first." },
+        { "text": "Assess for regulatory reporting requirements", "correct": true, "explanation": "Per Section 5.4, critical complaints trigger immediate assessment for regulatory reporting per SOP-012." },
+        { "text": "Assign to engineering for code review", "explanation": "Engineering assignment happens during investigation, not as the immediate action." }
+      ]
+    }
+  ]
+}

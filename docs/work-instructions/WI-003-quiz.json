@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What does an electronic signature on a release signify?",
+      "options": [
+        { "text": "The signer saw the release notification", "explanation": "Viewing a notification is not the same as signing — signatures carry specific meaning." },
+        { "text": "The signer reviewed and accepts responsibility for the release per their designated role", "correct": true, "explanation": "Electronic signatures bind the signer to a specific meaning (e.g., 'I have reviewed and approve this release') per 21 CFR Part 11." },
+        { "text": "The signer wants to be CC'd on release communications", "explanation": "Signatures are not subscription mechanisms." },
+        { "text": "The signer acknowledges the release exists", "explanation": "Signatures carry stronger meaning than mere acknowledgment." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A release can be published before all required signatures are collected.",
+      "correct": false,
+      "explanation": "All required signatures must be collected before a release can be published. Publishing without complete signatures violates Part 11 requirements."
+    },
+    {
+      "type": "single-choice",
+      "text": "What authentication is required when applying an electronic signature?",
+      "options": [
+        { "text": "No authentication — clicking a button is sufficient", "explanation": "Electronic signatures require authentication per 21 CFR Part 11." },
+        { "text": "Password or biometric authentication", "correct": true, "explanation": "Electronic signatures must include authentication (e.g., password entry) to verify the signer's identity per Part 11." },
+        { "text": "Verbal confirmation to a witness", "explanation": "Verbal confirmation is not an electronic authentication method." },
+        { "text": "Sending an email from the signer's account", "explanation": "Email is not an accepted electronic signature authentication method." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Can an electronic signature be modified after it is applied?",
+      "options": [
+        { "text": "Yes, by the original signer", "explanation": "Electronic signatures are immutable once created." },
+        { "text": "Yes, by a system administrator", "explanation": "No one can modify a signature — they are immutable." },
+        { "text": "No, signatures are immutable once created", "correct": true, "explanation": "Per Part 11 requirements, electronic signatures are immutable. If a correction is needed, the release must be withdrawn and re-signed." },
+        { "text": "Yes, within 24 hours", "explanation": "There is no modification window — signatures are immediately immutable." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What meaning must be selected when applying a release signature?",
+      "options": [
+        { "text": "No meaning selection required", "explanation": "Part 11 requires that the meaning of the signature be recorded." },
+        { "text": "A predefined meaning such as 'Reviewed', 'Approved', or 'Authored'", "correct": true, "explanation": "Each signature must include a predefined meaning that describes the signer's intent and role in the release process." },
+        { "text": "A free-text comment", "explanation": "Meanings are predefined, not free-text, to ensure consistency and compliance." },
+        { "text": "The signer's job title", "explanation": "Job title is not the same as signature meaning — the meaning describes the action (reviewed, approved, etc.)." }
+      ]
+    }
+  ]
+}

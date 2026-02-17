@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the minimum frequency for scheduled management reviews?",
+      "options": [
+        { "text": "Monthly", "explanation": "Monthly reviews are not required; the minimum is annually." },
+        { "text": "Quarterly", "explanation": "Quarterly reviews exceed the minimum requirement." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.1, management reviews are conducted at least annually, scheduled in Q1." },
+        { "text": "Every two years", "explanation": "Every two years does not meet the minimum annual requirement." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How far in advance must the agenda and input data be distributed before a management review?",
+      "options": [
+        { "text": "1 business day", "explanation": "One day does not allow adequate preparation time." },
+        { "text": "5 business days", "correct": true, "explanation": "Per Section 5.4, agenda and input data are distributed at least 5 business days before the meeting." },
+        { "text": "10 business days", "explanation": "10 days exceeds the minimum requirement." },
+        { "text": "No advance distribution required", "explanation": "Advance distribution is required to allow attendees to prepare." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A management review can be triggered by a major nonconformance outside the annual schedule.",
+      "correct": true,
+      "explanation": "Per Section 5.1, reviews are also conducted after significant events including major nonconformances, regulatory findings, product recalls, or organizational changes."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is NOT a required management review input?",
+      "options": [
+        { "text": "Internal and external audit results", "explanation": "Audit results are a required input per Section 5.3." },
+        { "text": "Customer feedback and complaint trends", "explanation": "Customer feedback is a required input per Section 5.3." },
+        { "text": "Individual employee performance reviews", "correct": true, "explanation": "Individual performance reviews are not a management review input. The focus is on QMS processes, not individual performance." },
+        { "text": "CAPA status and effectiveness", "explanation": "CAPA status is a required input per Section 5.3." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Within how many business days must meeting minutes be distributed after the review?",
+      "options": [
+        { "text": "1 business day", "explanation": "The requirement is 5 business days, not 1." },
+        { "text": "3 business days", "explanation": "The requirement is 5 business days." },
+        { "text": "5 business days", "correct": true, "explanation": "Per Section 5.6, meeting minutes are distributed within 5 business days." },
+        { "text": "10 business days", "explanation": "10 days exceeds the requirement stated in the SOP." }
+      ]
+    }
+  ]
+}

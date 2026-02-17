@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the minimum passing score for quiz-based training?",
+      "options": [
+        { "text": "60%", "explanation": "60% does not meet the minimum passing threshold." },
+        { "text": "70%", "explanation": "70% does not meet the minimum passing threshold." },
+        { "text": "80%", "correct": true, "explanation": "Per Section 5.3, quiz-based training requires a passing score of ≥ 80%." },
+        { "text": "100%", "explanation": "100% is not required; the minimum is 80%." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Within how many days must new employees complete their onboarding training?",
+      "options": [
+        { "text": "7 days", "explanation": "7 days is too short for the full onboarding program." },
+        { "text": "14 days", "explanation": "14 days does not match the requirement." },
+        { "text": "30 days", "correct": true, "explanation": "Per Section 5.4, new employees must complete onboarding training within 30 days." },
+        { "text": "90 days", "explanation": "90 days exceeds the required timeframe." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "When an SOP is updated, re-training is automatically assigned to personnel in the SOP's required departments.",
+      "correct": true,
+      "explanation": "Per Section 5.5, the QMS platform automatically assigns re-training when an SOP is updated."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is NOT a trigger for identifying training needs?",
+      "options": [
+        { "text": "New hire onboarding", "explanation": "New hires require training per Section 5.2." },
+        { "text": "Role changes or promotions", "explanation": "Role changes trigger training needs assessment per Section 5.2." },
+        { "text": "Employee birthday", "correct": true, "explanation": "Employee birthdays are not a training needs trigger. Triggers include onboarding, role changes, SOP updates, nonconformances, and regulatory changes." },
+        { "text": "Nonconformances indicating knowledge gaps", "explanation": "Knowledge-gap nonconformances trigger training per Section 5.2." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What verification method is used for instructor-led training?",
+      "options": [
+        { "text": "Quiz with ≥ 80% score", "explanation": "Quizzes are used for quiz-based training, not instructor-led." },
+        { "text": "Electronic acknowledgment", "explanation": "Acknowledgment is used for policies, not instructor-led training." },
+        { "text": "Instructor sign-off", "correct": true, "explanation": "Per Section 5.3, instructor-led training is verified by instructor sign-off." },
+        { "text": "Self-certification", "explanation": "Self-certification is not an accepted verification method." }
+      ]
+    }
+  ]
+}

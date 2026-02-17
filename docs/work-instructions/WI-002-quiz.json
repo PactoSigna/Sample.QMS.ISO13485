@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "Who has the authority to give final approval for a controlled document?",
+      "options": [
+        { "text": "Any team member", "explanation": "Only designated approvers listed in the document frontmatter have approval authority." },
+        { "text": "The document author", "explanation": "Authors cannot approve their own documents." },
+        { "text": "Approvers listed in the document frontmatter", "correct": true, "explanation": "Frontmatter designates the specific approvers who have authority to give final approval." },
+        { "text": "The most senior person available", "explanation": "Seniority alone does not confer approval authority; it must be designated." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A document can be marked as 'approved' before all designated approvers have signed off.",
+      "correct": false,
+      "explanation": "All designated approvers must sign off before the document status can be changed to 'approved'."
+    },
+    {
+      "type": "single-choice",
+      "text": "What must happen to a document's status before the approval process begins?",
+      "options": [
+        { "text": "It must be 'effective'", "explanation": "Documents move to 'effective' after approval, not before." },
+        { "text": "It must be 'draft' and have passed review", "correct": true, "explanation": "Documents must complete the review process before moving to the approval stage." },
+        { "text": "It must be 'obsolete'", "explanation": "Obsolete documents have been retired and are not in the approval flow." },
+        { "text": "No specific status required", "explanation": "Documents must follow the defined workflow: draft → review → approval." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What record is created when an approver signs off on a document?",
+      "options": [
+        { "text": "An email confirmation", "explanation": "Email is not the formal approval record mechanism." },
+        { "text": "An electronic signature in the QMS platform", "correct": true, "explanation": "Electronic signatures provide tamper-evident, Part 11 compliant approval records." },
+        { "text": "A verbal acknowledgment", "explanation": "Verbal acknowledgments are not traceable records." },
+        { "text": "A handwritten signature on a printed copy", "explanation": "The QMS uses electronic signatures, not handwritten ones." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "If an approver identifies an issue during the approval process, what should they do?",
+      "options": [
+        { "text": "Approve anyway and fix it later", "explanation": "Approving with known issues violates the approval process." },
+        { "text": "Reject and provide feedback for the author to address", "correct": true, "explanation": "Issues must be resolved before approval. The approver provides feedback and the document returns to the author." },
+        { "text": "Fix the issue themselves without notifying the author", "explanation": "Changes should be made by the author and go through proper review." },
+        { "text": "Escalate to the CEO", "explanation": "CEO escalation is not the standard process for approval issues." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "How often must critical suppliers be re-evaluated?",
+      "options": [
+        { "text": "Every 6 months", "explanation": "Six months exceeds the minimum frequency for critical suppliers." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.7, critical suppliers are re-evaluated annually." },
+        { "text": "Every 2 years", "explanation": "Biennial re-evaluation applies to non-critical suppliers, not critical ones." },
+        { "text": "Only after a nonconformance", "explanation": "Re-evaluation is scheduled, not only triggered by nonconformances." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What approval is required to purchase from a supplier not on the Approved Supplier List?",
+      "options": [
+        { "text": "Department head approval", "explanation": "Department head approval is not sufficient for non-ASL purchases." },
+        { "text": "Quality Manager approval", "correct": true, "explanation": "Per Section 5.3, purchases from non-ASL suppliers require Quality Manager approval." },
+        { "text": "No special approval needed", "explanation": "Non-ASL purchases require explicit Quality Manager approval." },
+        { "text": "CEO approval", "explanation": "CEO approval is not specifically required; Quality Manager approval is sufficient." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A supplier providing only office supplies would be classified as a critical supplier.",
+      "correct": false,
+      "explanation": "Per Section 5.1, critical suppliers are those whose products or services directly affect device safety or regulatory compliance. Office supplies are non-critical."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is NOT a supplier evaluation criterion?",
+      "options": [
+        { "text": "Quality capability and certifications", "explanation": "Quality capability is a required evaluation criterion." },
+        { "text": "Company founding year", "correct": true, "explanation": "Company age is not an evaluation criterion. Criteria include quality capability, technical capability, regulatory compliance, financial stability, and security posture." },
+        { "text": "Technical competence and experience", "explanation": "Technical capability is a required evaluation criterion." },
+        { "text": "Security posture and certifications", "explanation": "Security posture is a required criterion for cloud/infrastructure suppliers." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What must be verified when receiving a SOUP software component?",
+      "options": [
+        { "text": "Source code readability", "explanation": "SOUP source code review is not a standard incoming verification step." },
+        { "text": "Version, integrity check, and license compliance", "correct": true, "explanation": "Per Section 5.6, software component verification includes version verification, integrity check (checksums), and license compliance." },
+        { "text": "Developer certifications", "explanation": "Developer certifications are not an incoming verification requirement." },
+        { "text": "Number of GitHub stars", "explanation": "Community popularity metrics are not part of formal incoming verification." }
+      ]
+    }
+  ]
+}

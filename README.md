@@ -1,8 +1,8 @@
 # Sample.QMS.ISO13485
 
-**ISO 13485 Quality Management System Procedures**
+**ISO 13485 Quality Management System — Complete SaMD Coverage**
 
-This repository contains a foundational Quality Management System (QMS) with Standard Operating Procedures (SOPs), work instructions, policies, audit reports, and training quizzes aligned with ISO 13485:2016 requirements.
+This repository contains a complete Quality Management System (QMS) covering all ISO 13485:2016 clauses applicable to Software as a Medical Device (SaMD) companies, including integration with IEC 62304, ISO 14971, and EU MDR requirements.
 
 ## Purpose
 
@@ -38,23 +38,40 @@ Use your preferred AI assistant to adapt this QMS for your organization. Example
 
 ```
 docs/
+├── quality-manual/                    # Quality Manual
+│   └── QM-001-quality-manual.md          # QMS scope, exclusions, process map
+│
+├── policies/                          # Quality Policies
+│   └── POL-001-quality-policy.md         # Quality Policy statement
+│
 ├── sops/                              # Standard Operating Procedures
-│   ├── SOP-001-document-control.md       # Document Control
-│   ├── SOP-001-quiz.json                 # Training quiz for SOP-001
-│   ├── SOP-002-design-development.md     # Design & Development
-│   ├── SOP-002-quiz.json                 # Training quiz for SOP-002
-│   ├── SOP-003-risk-management.md        # Risk Management
-│   ├── SOP-003-quiz.json                 # Training quiz for SOP-003
-│   ├── SOP-004-capa.md                   # CAPA
-│   └── SOP-004-quiz.json                 # Training quiz for SOP-004
+│   ├── SOP-001-document-control.md       # Document Control (4.2.4)
+│   ├── SOP-002-design-development.md     # Design & Development (7.3)
+│   ├── SOP-003-risk-management.md        # Risk Management (7.1 / ISO 14971)
+│   ├── SOP-004-capa.md                   # CAPA (8.5.2 / 8.5.3)
+│   ├── SOP-005-control-of-records.md     # Control of Records (4.2.5)
+│   ├── SOP-006-management-review.md      # Management Review (5.6.1)
+│   ├── SOP-007-training-competence.md    # Training & Competence (6.2)
+│   ├── SOP-008-internal-audit.md         # Internal Audit (8.2.4)
+│   ├── SOP-009-purchasing-suppliers.md   # Purchasing & Suppliers (7.4.1)
+│   ├── SOP-010-feedback-complaints.md    # Feedback & Complaints (8.2.1/8.2.2)
+│   ├── SOP-011-nonconforming-product.md  # Nonconforming Product (8.3.1)
+│   ├── SOP-012-regulatory-reporting.md   # Regulatory Reporting (8.2.3/8.3.3)
+│   ├── SOP-013-software-lifecycle.md     # Software Lifecycle (IEC 62304)
+│   ├── SOP-014-production-control.md     # Build & Deployment (7.5.1)
+│   ├── SOP-015-change-control.md         # Change Control (7.3.9)
+│   ├── SOP-016-data-analysis.md          # Data Analysis (8.4)
+│   ├── SOP-017-computer-system-validation.md  # CSV (4.1.6)
+│   ├── SOP-018-infrastructure.md         # Infrastructure (6.3/6.4)
+│   ├── SOP-019-post-market-surveillance.md    # PMS (MDR Art. 83-86)
+│   ├── SOP-020-preservation-labeling.md  # Preservation & Labeling (7.5.11)
+│   └── SOP-xxx-quiz.json                # Training quiz for each SOP
 │
 ├── work-instructions/                 # Work Instructions
 │   ├── WI-001-github-pr-review.md        # GitHub PR review workflow
 │   ├── WI-002-document-approval.md       # Document approval in PactoSigna
-│   └── WI-003-release-signing.md         # Release signature workflow
-│
-├── policies/                          # Quality Policies
-│   └── POL-001-quality-policy.md         # Quality Policy statement
+│   ├── WI-003-release-signing.md         # Release signature workflow
+│   └── WI-xxx-quiz.json                 # Training quiz for each WI
 │
 └── audits/                            # Audit Reports
     ├── AUD-2026-001.md                   # Internal Audit Report 2026
@@ -64,39 +81,80 @@ docs/
 ## Document Hierarchy
 
 ```
-Quality Manual (implied)
+Quality Manual (QM-001)
     │
     ├── Policies (POL-xxx)
-    │       │
-    │       └── SOPs (SOP-xxx) ← with training quizzes (SOP-xxx-quiz.json)
-    │               │
-    │               └── Work Instructions (WI-xxx)
+    │
+    ├── Standard Operating Procedures (SOP-xxx)
+    │       with training quizzes (SOP-xxx-quiz.json)
+    │
+    ├── Work Instructions (WI-xxx)
+    │       with training quizzes (WI-xxx-quiz.json)
+    │
+    └── Records & Reports (AUD-xxx)
 ```
 
 ## ISO 13485 Clause Coverage
 
 | Clause | Topic | Documents |
-|--------|-------|-----------|
-| 4.2 | Documentation Requirements | SOP-001 |
-| 7.1 | Planning of Product Realization | SOP-002 |
-| 7.3 | Design and Development | SOP-002, WI-001 |
-| 7.5 | Production and Service Provision | WI-002, WI-003 |
-| 8.2 | Monitoring and Measurement | SOP-003, AUD-2026-001 |
-| 8.5 | Improvement | SOP-004 |
+| --- | --- | --- |
+| 4.1.6 | Computer software validation | SOP-017 |
+| 4.2.2 | Quality Manual | QM-001 |
+| 4.2.4 | Document control | SOP-001 |
+| 4.2.5 | Control of records | SOP-005 |
+| 5.3 | Quality policy | POL-001 |
+| 5.6 | Management review | SOP-006 |
+| 6.2 | Human resources / Training | SOP-007 |
+| 6.3 / 6.4 | Infrastructure / Work environment | SOP-018 |
+| 7.1 | Planning of product realization | SOP-002, SOP-003 |
+| 7.3 | Design and development | SOP-002, SOP-013, WI-001 |
+| 7.3.9 | Design changes | SOP-015 |
+| 7.4 | Purchasing | SOP-009 |
+| 7.5.1 | Production and service provision | SOP-014, WI-002, WI-003 |
+| 7.5.8 / 7.5.9 | Identification / Traceability | SOP-014, SOP-013 |
+| 7.5.11 | Preservation of product | SOP-020 |
+| 8.2.1 / 8.2.2 | Feedback / Complaint handling | SOP-010 |
+| 8.2.3 | Regulatory reporting | SOP-012 |
+| 8.2.4 | Internal audit | SOP-008, AUD-2026-001 |
+| 8.3 | Nonconforming product | SOP-011 |
+| 8.3.3 | Advisory notices | SOP-012 |
+| 8.4 | Data analysis | SOP-016 |
+| 8.5.2 / 8.5.3 | Corrective / Preventive action | SOP-004 |
+
+### Clauses Excluded for SaMD
+
+The following clauses are formally excluded in QM-001 with justification:
+
+- **6.4.2** — Contamination control (no physical product)
+- **7.5.2** — Cleanliness of product (no physical product)
+- **7.5.5** — Sterile medical device requirements (software is not sterilized)
+- **7.5.7** — Sterilization validation (no sterilization processes)
+- **7.5.9.2** — Implantable device traceability (software is not implantable)
+
+### Additional Standards Coverage
+
+| Standard | Topic | Documents |
+| --- | --- | --- |
+| IEC 62304 | Software lifecycle | SOP-013 |
+| ISO 14971 | Risk management | SOP-003 |
+| IEC 81001-5-1 | Health software security | SOP-018 |
+| EU MDR Art. 83-86 | Post-market surveillance | SOP-019 |
+| 21 CFR Part 11 | Electronic signatures | WI-003 |
+| 21 CFR Part 820 | Quality System Regulation | Multiple SOPs |
 
 ## Training Quizzes
 
-Each SOP has an associated training quiz JSON file (e.g., `SOP-001-quiz.json`) used for training compliance in PactoSigna. When a document with `training_mode: quiz` is published, team members in the required departments are assigned the quiz.
+Each SOP and work instruction has an associated training quiz JSON file used for training compliance in PactoSigna. When a document with `training_mode: quiz` is published, team members in the required departments are assigned the quiz.
 
-**Quiz file format:** `{SOP-ID}-quiz.json` alongside the SOP markdown file.
+**Quiz file format:** `{DOC-ID}-quiz.json` alongside the document markdown file.
 
-**Question types:** `single-choice`, `multi-choice`, `true-false`
+**Question types:** `single-choice`, `true-false`
 
 Each quiz defines a `passingScore` (percentage) and an array of `questions`. Options include an `explanation` field shown after the learner answers, reinforcing correct understanding.
 
 ## Audit Reports
 
-The `docs/audits/` folder contains internal audit reports. Each audit document references a source PDF and links to the SOPs and work instructions that were audited. Audit reports support ISO 13485 Clause 8.2 (Internal Audits) and provide traceability to the procedures being evaluated.
+The `docs/audits/` folder contains internal audit reports. Each audit document references a source PDF and links to the SOPs and work instructions that were audited.
 
 ## CI / Validation
 
@@ -111,4 +169,4 @@ This sample repository is provided under the MIT License for educational and com
 
 ---
 
-*Built for [PactoSigna](https://pactosigna.com) - AI-native Quality Management for Medical Device Software*
+*Built for [PactoSigna](https://pactosigna.com) — AI-native Quality Management for Medical Device Software*

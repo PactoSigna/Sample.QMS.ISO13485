@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "Under the EU MDR, what is the reporting timeline for a serious incident that led to death?",
+      "options": [
+        { "text": "2 calendar days", "explanation": "2 days is for serious public health threats, not individual death events." },
+        { "text": "10 calendar days", "correct": true, "explanation": "Per Section 5.2, death or unanticipated serious deterioration of health must be reported within 10 calendar days under EU MDR." },
+        { "text": "15 calendar days", "explanation": "15 days applies to other serious incidents." },
+        { "text": "30 calendar days", "explanation": "30 days is the FDA MDR timeline, not the EU MDR timeline for death events." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Within how many hours must a reportability assessment be documented after becoming aware of a potential event?",
+      "options": [
+        { "text": "8 hours", "explanation": "The requirement is 24 hours, not 8." },
+        { "text": "24 hours", "correct": true, "explanation": "Per Section 5.1, the reportability assessment must be documented within 24 hours of becoming aware of the event." },
+        { "text": "48 hours", "explanation": "48 hours exceeds the required timeframe." },
+        { "text": "5 business days", "explanation": "5 business days is far too long for reportability assessment." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "If uncertain whether an event meets reportability criteria, the organization should wait for more information before deciding.",
+      "correct": false,
+      "explanation": "Per Section 5.1, if uncertain, err on the side of reporting. An initial report can be submitted with available information, and follow-up reports provided as more information becomes available."
+    },
+    {
+      "type": "single-choice",
+      "text": "Who must approve an advisory notice before distribution?",
+      "options": [
+        { "text": "Engineering and Quality", "explanation": "Advisory notices require Regulatory and Management approval." },
+        { "text": "Regulatory and Management", "correct": true, "explanation": "Per Section 5.6, advisory notices are reviewed and approved by Regulatory and Management." },
+        { "text": "Quality only", "explanation": "Quality alone cannot approve advisory notices." },
+        { "text": "The customer support team", "explanation": "Customer support distributes notices but does not approve them." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Under FDA regulations (21 CFR Part 803), what is the standard reporting timeline for a device malfunction that could cause serious injury?",
+      "options": [
+        { "text": "5 calendar days", "explanation": "5-day reports apply when there is awareness of similar events, not as the standard timeline." },
+        { "text": "15 calendar days", "explanation": "15 days is an EU MDR timeline, not an FDA timeline." },
+        { "text": "30 calendar days", "correct": true, "explanation": "Per Section 5.2, FDA MDR requires reporting of malfunctions that could cause death or serious injury within 30 calendar days." },
+        { "text": "60 calendar days", "explanation": "60 days exceeds the FDA reporting requirement." }
+      ]
+    }
+  ]
+}

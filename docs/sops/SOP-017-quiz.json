@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "A system that manages electronic signatures for release approvals would be classified as:",
+      "options": [
+        { "text": "Low risk", "explanation": "Electronic signatures directly impact regulatory compliance, making this high risk." },
+        { "text": "Medium risk", "explanation": "Electronic signatures have direct impact on compliance, requiring full validation." },
+        { "text": "High risk", "correct": true, "explanation": "Per Section 5.2, systems with direct impact on product quality, safety, or regulatory compliance (e.g., electronic signatures) are classified as high risk." },
+        { "text": "No classification needed", "explanation": "All computer systems used in the QMS must be classified." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How often must validated systems undergo periodic review?",
+      "options": [
+        { "text": "Every 6 months", "explanation": "The review cycle is annual, not semi-annual." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.7, validated systems are reviewed annually." },
+        { "text": "Every 2 years", "explanation": "Two years exceeds the required review frequency." },
+        { "text": "Only when a problem is reported", "explanation": "Reviews are scheduled annually, not only triggered by problems." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A security patch to a validated system always requires full revalidation.",
+      "correct": false,
+      "explanation": "Per Section 5.6, minor updates including patches are assessed for impact. Revalidation is only performed if validated functions are affected."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which validation qualification is only required for high-risk systems?",
+      "options": [
+        { "text": "OQ (Operational Qualification)", "explanation": "OQ is required for both high and medium risk systems." },
+        { "text": "IQ (Installation Qualification)", "correct": true, "explanation": "Per Section 5.4, IQ is only required for high-risk systems. Medium risk systems require OQ only." },
+        { "text": "Intended use documentation", "explanation": "Intended use documentation is required for all risk levels." },
+        { "text": "Risk classification", "explanation": "Risk classification is required for all systems, not just high risk." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following would trigger revalidation of a system?",
+      "options": [
+        { "text": "Adding a new user account", "explanation": "Adding users is routine administration, not a revalidation trigger." },
+        { "text": "Major version upgrade of the system", "correct": true, "explanation": "Per Section 5.6, major version upgrades are a revalidation trigger." },
+        { "text": "Changing the desktop wallpaper", "explanation": "Cosmetic changes do not affect validated functions." },
+        { "text": "Renewing the vendor support contract", "explanation": "Contract renewals do not change system functionality." }
+      ]
+    }
+  ]
+}

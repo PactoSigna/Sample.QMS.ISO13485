@@ -1,0 +1,47 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the minimum number of reviewers required for a pull request?",
+      "options": [
+        { "text": "None — self-merge is allowed", "explanation": "Self-merge bypasses the required review process." },
+        { "text": "At least one independent reviewer", "correct": true, "explanation": "All changes must be reviewed by at least one person who did not author the change." },
+        { "text": "Three reviewers from different departments", "explanation": "One independent reviewer is the minimum requirement." },
+        { "text": "The entire engineering team", "explanation": "Full team review is not required for every PR." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A PR author can approve their own pull request.",
+      "correct": false,
+      "explanation": "Reviewers must be independent of the author. Self-approval violates the independence requirement."
+    },
+    {
+      "type": "single-choice",
+      "text": "What should a reviewer check during a PR review?",
+      "options": [
+        { "text": "Only syntax errors", "explanation": "Review scope extends beyond syntax to include correctness, completeness, and compliance." },
+        { "text": "Technical accuracy, completeness, and compliance with SOPs", "correct": true, "explanation": "Reviewers verify technical accuracy, completeness of the change, and compliance with applicable procedures." },
+        { "text": "Only that the code compiles", "explanation": "Compilation is necessary but insufficient — content review is required." },
+        { "text": "Personal coding style preferences only", "explanation": "Style preferences are secondary to correctness and compliance." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How should review feedback be communicated?",
+      "options": [
+        { "text": "Verbal feedback in a meeting", "explanation": "Verbal feedback is not traceable; PR comments create a documented trail." },
+        { "text": "Via PR comments for traceability", "correct": true, "explanation": "PR comments provide a documented, traceable record of review feedback and resolution." },
+        { "text": "Private email to the author", "explanation": "Email feedback is not linked to the change and lacks traceability." },
+        { "text": "Instant message", "explanation": "Instant messages are not part of the formal review record." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A PR can be merged to the main branch before all assigned reviewers have approved.",
+      "correct": false,
+      "explanation": "All assigned reviewers must approve the PR before it can be merged to maintain document control integrity."
+    }
+  ]
+}

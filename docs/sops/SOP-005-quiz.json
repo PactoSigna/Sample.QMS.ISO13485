@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the minimum retention period for design and development records under the EU MDR?",
+      "options": [
+        { "text": "5 years", "explanation": "5 years is too short for design records under EU MDR." },
+        { "text": "10 years", "explanation": "10 years is used for audit records but not design records." },
+        { "text": "Lifetime of device + 15 years", "correct": true, "explanation": "EU MDR Art. 10(8) requires retention for the lifetime of the device plus 15 years." },
+        { "text": "Indefinitely", "explanation": "Records have defined retention periods and can be disposed after that period." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Who is responsible for approving the disposition of quality records?",
+      "options": [
+        { "text": "The record author", "explanation": "The author creates the record but does not authorize disposition." },
+        { "text": "Quality Manager", "correct": true, "explanation": "Per Section 5.6, the Quality Manager approves disposition of records." },
+        { "text": "Any department head", "explanation": "Disposition requires Quality Manager approval specifically." },
+        { "text": "IT department", "explanation": "IT manages storage systems but does not authorize disposition." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Electronic records in the QMS platform can be modified after creation to correct errors.",
+      "correct": false,
+      "explanation": "Electronic records are immutable once created to maintain integrity and compliance with Part 11 requirements."
+    },
+    {
+      "type": "single-choice",
+      "text": "How often does Quality review records approaching end of retention period?",
+      "options": [
+        { "text": "Monthly", "explanation": "The review cycle is quarterly, not monthly." },
+        { "text": "Quarterly", "correct": true, "explanation": "Per Section 5.6, Quality reviews records approaching end of retention period quarterly." },
+        { "text": "Annually", "explanation": "Annual reviews may miss records approaching their retention limit." },
+        { "text": "Only when requested", "explanation": "Reviews are conducted on a scheduled basis, not on demand." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is NOT a required element for quality record identification?",
+      "options": [
+        { "text": "Unique identifier", "explanation": "Unique identifier is required per Section 5.1." },
+        { "text": "Date of creation", "explanation": "Date of creation is required per Section 5.1." },
+        { "text": "File size", "correct": true, "explanation": "File size is not a required identification element. Required elements are: unique identifier, date, author, and status." },
+        { "text": "Author or responsible person", "explanation": "Author is required per Section 5.1." }
+      ]
+    }
+  ]
+}
