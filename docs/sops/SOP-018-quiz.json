@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "Within what timeframe must critical security patches be applied?",
+      "options": [
+        { "text": "24 hours", "explanation": "The requirement is within 72 hours, not 24." },
+        { "text": "72 hours", "correct": true, "explanation": "Per Section 5.3, critical patches must be applied within 72 hours." },
+        { "text": "1 week", "explanation": "One week exceeds the requirement for critical patches." },
+        { "text": "Next monthly patch cycle", "explanation": "Critical patches cannot wait for the regular monthly cycle." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How often must backup integrity be verified?",
+      "options": [
+        { "text": "Weekly", "explanation": "Weekly exceeds the required verification frequency." },
+        { "text": "Monthly", "correct": true, "explanation": "Per Section 5.5, backup integrity is verified monthly through restore tests." },
+        { "text": "Quarterly", "explanation": "Quarterly is less frequent than required." },
+        { "text": "Annually", "explanation": "Annual verification is insufficient; monthly is required." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Access to production systems should be revoked within 24 hours of an employee's departure.",
+      "correct": true,
+      "explanation": "Per Section 5.4, access is revoked within 24 hours of role change or departure."
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the Recovery Time Objective (RTO) for production data?",
+      "options": [
+        { "text": "1 hour", "explanation": "1 hour is the RPO for configuration, not the RTO for production data." },
+        { "text": "4 hours", "correct": true, "explanation": "Per Section 5.5, the RTO for production data is ≤ 4 hours." },
+        { "text": "24 hours", "explanation": "24 hours is the RPO for production data, not the RTO." },
+        { "text": "48 hours", "explanation": "48 hours exceeds the recovery time objective." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How often is the disaster recovery plan tested?",
+      "options": [
+        { "text": "Monthly", "explanation": "Monthly testing exceeds the minimum requirement." },
+        { "text": "Quarterly", "explanation": "Quarterly testing exceeds the minimum requirement." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.5, the DR plan is tested annually through tabletop exercise or live failover." },
+        { "text": "Every 3 years", "explanation": "Three years is too infrequent for DR testing." }
+      ]
+    }
+  ]
+}

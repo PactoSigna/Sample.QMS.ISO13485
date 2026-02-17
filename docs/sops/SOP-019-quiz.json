@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "How often must a PSUR be submitted for a Class IIb medical device?",
+      "options": [
+        { "text": "Every 6 months", "explanation": "Six months exceeds the required frequency for Class IIb." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.6, PSURs for Class IIb and III devices are submitted annually." },
+        { "text": "Every 2 years", "explanation": "Every 2 years applies to Class IIa devices, not Class IIb." },
+        { "text": "Every 5 years", "explanation": "Five years is far too infrequent for any device class." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the first action when a safety signal is detected during PMS?",
+      "options": [
+        { "text": "Issue a product recall", "explanation": "Recalls are not automatic; signal strength must be assessed first." },
+        { "text": "Assess signal strength and clinical significance", "correct": true, "explanation": "Per Section 5.4, the first step is to assess the signal's strength and clinical significance before taking action." },
+        { "text": "Update the marketing materials", "explanation": "Marketing updates are not the immediate response to safety signals." },
+        { "text": "File a PSUR", "explanation": "PSURs are periodic reports; safety signals require immediate assessment." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "PMS plans must be reviewed and updated at least every two years.",
+      "correct": false,
+      "explanation": "Per Section 5.1, PMS plans are reviewed annually and updated as needed, not every two years."
+    },
+    {
+      "type": "single-choice",
+      "text": "Which of the following is a proactive PMS data source?",
+      "options": [
+        { "text": "Customer complaints", "explanation": "Complaints are reactive data — they arrive after an issue occurs." },
+        { "text": "Scientific literature monitoring", "correct": true, "explanation": "Per Section 5.2, scientific literature is a proactive data source collected through periodic searches." },
+        { "text": "Incident reports", "explanation": "Incident reports are reactive data." },
+        { "text": "Field safety corrective actions", "explanation": "FSCAs are reactive responses to identified issues." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "When PMS data reveals a confirmed safety issue, which document must be updated?",
+      "options": [
+        { "text": "The marketing brochure", "explanation": "Marketing materials are not the primary document to update for safety issues." },
+        { "text": "The risk management file", "correct": true, "explanation": "Per Section 5.4, confirmed safety issues require updating the risk management file per SOP-003." },
+        { "text": "The employee handbook", "explanation": "The employee handbook is not related to product safety issues." },
+        { "text": "The supplier list", "explanation": "The supplier list is not directly affected by product safety findings." }
+      ]
+    }
+  ]
+}

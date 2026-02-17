@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What integrity verification is required for all release artifacts?",
+      "options": [
+        { "text": "Visual inspection", "explanation": "Visual inspection is not applicable to software artifacts." },
+        { "text": "SHA-256 integrity hashes", "correct": true, "explanation": "Per Section 5.1, all release artifacts must include SHA-256 integrity hashes." },
+        { "text": "Peer review only", "explanation": "Peer review verifies code quality, not artifact integrity." },
+        { "text": "No verification required for digital products", "explanation": "Digital products require integrity verification just like physical products." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Who must approve product labeling content before use?",
+      "options": [
+        { "text": "Engineering only", "explanation": "Engineering develops content but Regulatory provides approval." },
+        { "text": "Regulatory", "correct": true, "explanation": "Per Section 5.3, Regulatory approves label content before use." },
+        { "text": "Marketing", "explanation": "Marketing is not involved in regulatory labeling approval." },
+        { "text": "The development team lead", "explanation": "Label approval is a Regulatory responsibility." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "IFU updates are only needed when the software version changes.",
+      "correct": false,
+      "explanation": "Per Section 5.5, the IFU is updated with each release that affects user-facing behavior, not every version change. Conversely, IFU may need updating due to regulatory changes even without a software change."
+    },
+    {
+      "type": "single-choice",
+      "text": "How must translated labels be verified?",
+      "options": [
+        { "text": "Machine translation is sufficient", "explanation": "Machine translation alone does not meet the verification requirement." },
+        { "text": "Back-translation or review by native-speaking subject matter expert", "correct": true, "explanation": "Per Section 5.6, translations must be verified through back-translation or review by a native-speaking subject matter expert." },
+        { "text": "Approval by any bilingual employee", "explanation": "A qualified translator and expert reviewer are required, not any bilingual person." },
+        { "text": "No verification needed for digital labels", "explanation": "All translated labels require verification regardless of format." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How often are archived release artifacts verified for integrity?",
+      "options": [
+        { "text": "Monthly", "explanation": "Monthly exceeds the required verification frequency." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.1, archives are verified annually for integrity and accessibility." },
+        { "text": "Every 5 years", "explanation": "Five years is too infrequent for archive integrity verification." },
+        { "text": "Only when accessed", "explanation": "Verification is scheduled annually, not only on access." }
+      ]
+    }
+  ]
+}
