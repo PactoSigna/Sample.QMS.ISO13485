@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the key requirement for selecting an internal auditor?",
+      "options": [
+        { "text": "Must be from the Quality department", "explanation": "Auditors can be from any department as long as they are independent of the area being audited." },
+        { "text": "Must be independent of the area being audited", "correct": true, "explanation": "Per Section 5.2, auditors must be independent of the area being audited to ensure objectivity." },
+        { "text": "Must be a senior manager", "explanation": "Seniority is not a requirement; independence and training are." },
+        { "text": "Must have an external auditing certification", "explanation": "Internal audit training on ISO 19011 principles is required, not external certification." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Within how many business days must the audit report be prepared after the audit?",
+      "options": [
+        { "text": "5 business days", "explanation": "The requirement is 10 business days, not 5." },
+        { "text": "10 business days", "correct": true, "explanation": "Per Section 5.5, the lead auditor prepares the audit report within 10 business days." },
+        { "text": "20 business days", "explanation": "20 days exceeds the requirement." },
+        { "text": "30 business days", "explanation": "30 days exceeds the requirement." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Observations identified during an audit require CAPA to be initiated.",
+      "correct": false,
+      "explanation": "Per Section 5.6, only major and minor findings require CAPA. Observations are opportunities for improvement but do not constitute nonconformances."
+    },
+    {
+      "type": "single-choice",
+      "text": "How quickly must the auditee propose corrective actions for audit findings?",
+      "options": [
+        { "text": "5 business days", "explanation": "5 days does not match the requirement." },
+        { "text": "10 business days", "explanation": "10 days does not match the requirement." },
+        { "text": "15 business days", "correct": true, "explanation": "Per Section 5.6, the auditee proposes corrective actions within 15 business days." },
+        { "text": "30 business days", "explanation": "30 days exceeds the allowed timeframe." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What determines the audit frequency for a specific process?",
+      "options": [
+        { "text": "Process owner preference", "explanation": "Frequency is based on risk and previous findings, not preference." },
+        { "text": "Process risk and previous findings", "correct": true, "explanation": "Per Section 5.1, audit frequency is based on process risk and previous findings." },
+        { "text": "Number of employees in the area", "explanation": "Headcount is not a factor in determining audit frequency." },
+        { "text": "Alphabetical order of processes", "explanation": "Process order is irrelevant; risk and history determine frequency." }
+      ]
+    }
+  ]
+}
