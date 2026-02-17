@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "What is the required response time for critical nonconformances?",
+      "options": [
+        { "text": "Within 5 business days", "explanation": "5 business days is the timeframe for major nonconformances, not critical." },
+        { "text": "Immediate containment, disposition within 24 hours", "correct": true, "explanation": "Per Section 5.3, critical nonconformances require immediate containment and disposition within 24 hours." },
+        { "text": "Within 15 business days", "explanation": "15 business days is the timeframe for minor nonconformances." },
+        { "text": "At the next team meeting", "explanation": "Critical nonconformances require immediate action, not waiting for scheduled meetings." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Who must approve a concession (use-as-is) disposition for nonconforming product?",
+      "options": [
+        { "text": "Engineering lead only", "explanation": "Engineering alone cannot approve concessions." },
+        { "text": "Product Owner + Quality (+ Regulatory for safety-related)", "correct": true, "explanation": "Per Section 5.5, concessions require Product Owner + Quality approval, with Regulatory added for safety-related items." },
+        { "text": "Any department head", "explanation": "Concession approval requires specific roles as defined in the procedure." },
+        { "text": "Quality only", "explanation": "Quality alone is not sufficient; Product Owner approval is also required." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Reworked product can bypass the standard verification process to expedite the fix.",
+      "correct": false,
+      "explanation": "Per Section 5.6, rework follows the same design control process as original development and undergoes verification appropriate to the change."
+    },
+    {
+      "type": "single-choice",
+      "text": "A software defect found during system testing that has no safety impact and minor functional impact would be classified as:",
+      "options": [
+        { "text": "Critical", "explanation": "Critical is reserved for patient safety risks, data loss risks, or safety-affecting regulatory non-compliance." },
+        { "text": "Major", "explanation": "Major requires significant functional impact or regulatory non-compliance." },
+        { "text": "Minor", "correct": true, "explanation": "Per Section 5.3, minor severity applies to low functional impact with no safety or regulatory concern." },
+        { "text": "Observation", "explanation": "Observation is an audit term; nonconformances use critical/major/minor classification." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "After closing a nonconformance report, what additional step must Quality take?",
+      "options": [
+        { "text": "Archive the report and take no further action", "explanation": "Quality must also determine if CAPA is warranted." },
+        { "text": "Determine if CAPA is warranted", "correct": true, "explanation": "Per Section 5.7, Quality determines if CAPA is warranted and ensures the data feeds into data analysis." },
+        { "text": "Notify the customer", "explanation": "Customer notification happens during containment if needed, not as a closure step." },
+        { "text": "Submit a regulatory report", "explanation": "Regulatory reporting is assessed during containment, not as a standard closure step." }
+      ]
+    }
+  ]
+}

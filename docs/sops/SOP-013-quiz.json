@@ -1,0 +1,51 @@
+{
+  "passingScore": 80,
+  "questions": [
+    {
+      "type": "single-choice",
+      "text": "Which IEC 62304 software safety class requires software detailed design documentation?",
+      "options": [
+        { "text": "Class A only", "explanation": "Class A has the least rigorous requirements and does not require detailed design." },
+        { "text": "Class B and C", "explanation": "Class B requires architectural design but not detailed design." },
+        { "text": "Class C only", "correct": true, "explanation": "Per Section 5.2, software detailed design is only required for Class C software." },
+        { "text": "All classes", "explanation": "Detailed design is required only for Class C, not all classes." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the minimum code review requirement per this SOP?",
+      "options": [
+        { "text": "No code review required", "explanation": "Code review is required for Class B and C software." },
+        { "text": "All changes reviewed by at least one independent reviewer", "correct": true, "explanation": "Per Section 5.6, all changes must be reviewed by at least one independent reviewer." },
+        { "text": "Only critical bug fixes need review", "explanation": "All changes require review, not just critical fixes." },
+        { "text": "Review by the same developer who wrote the code", "explanation": "The reviewer must be independent of the author." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "Software with safety class A does not require software system testing.",
+      "correct": false,
+      "explanation": "Per Section 5.2, software system testing is required for all safety classes (A, B, and C)."
+    },
+    {
+      "type": "single-choice",
+      "text": "What must be done before releasing medical device software?",
+      "options": [
+        { "text": "Only pass all tests", "explanation": "Passing tests is necessary but not sufficient; several other criteria must be met." },
+        { "text": "All V&V complete, known anomalies documented with risk assessment, release notes prepared, signatures obtained, artifacts archived", "correct": true, "explanation": "Per Section 5.9, all five release criteria must be satisfied before release." },
+        { "text": "Engineering lead approval only", "explanation": "Release requires verification completion, documentation, and signatures — not just one approval." },
+        { "text": "Customer approval", "explanation": "Customer approval is not a release prerequisite." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is SOUP and how must it be managed?",
+      "options": [
+        { "text": "Software developed internally; no special management needed", "explanation": "SOUP is pre-existing software not developed under a known process, and it requires specific management." },
+        { "text": "Pre-existing software requiring identification, risk assessment, and monitoring", "correct": true, "explanation": "Per Section 5.10, SOUP must be identified, have requirements defined, risk assessed, and monitored for vulnerabilities and updates." },
+        { "text": "Open-source software that can be used without restrictions", "explanation": "SOUP requires formal risk assessment and monitoring regardless of its license type." },
+        { "text": "Software under test that has not been verified", "explanation": "SOUP refers to pre-existing software of unknown provenance, not software under test." }
+      ]
+    }
+  ]
+}
