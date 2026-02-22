@@ -1,0 +1,19 @@
+# Auto-generated — run `pnpm generate:schemas` to regenerate
+schema_version: "1.0"
+document_type: test_protocol
+label: "Test Protocol"
+scope: device
+folder: docs/test/protocols
+id_prefixes: [TP-]
+
+frontmatter:
+  id:        { required: true, type: string }
+  title:     { required: true, type: string }
+  status:    { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived"] }
+  type:      { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
+  author:    { required: false, type: email, notes: "email address of primary author" }
+  reviewers: { required: false, type: string[], notes: "department names e.g. Engineering" }
+  approvers: { required: false, type: string[], notes: "department names e.g. Quality" }
+
+sections:
+  required: []

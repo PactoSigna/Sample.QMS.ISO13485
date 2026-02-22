@@ -1,0 +1,44 @@
+# Auto-generated — run `pnpm generate:schemas` to regenerate
+schema_version: "1.0"
+total_types: 39
+
+types:
+  - { document_type: user_need                          , label: "User Need", scope: device, file: product/user-need.yaml }
+  - { document_type: requirement                        , label: "Requirement", scope: device, file: product/requirement.yaml }
+  - { document_type: architecture                       , label: "Architecture", scope: device, file: software/architecture.yaml }
+  - { document_type: detailed_design                    , label: "Detailed Design", scope: device, file: software/detailed-design.yaml }
+  - { document_type: test_protocol                      , label: "Test Protocol", scope: device, file: test/test-protocol.yaml }
+  - { document_type: test_report                        , label: "Test Report", scope: device, file: test/test-report.yaml }
+  - { document_type: sop                                , label: "SOP", scope: qms, file: qms/sop.yaml }
+  - { document_type: work_instruction                   , label: "Work Instruction", scope: qms, file: qms/work-instruction.yaml }
+  - { document_type: policy                             , label: "Policy", scope: qms, file: qms/policy.yaml }
+  - { document_type: usability_risk                     , label: "Usability Risk", scope: device, file: risk/usability-risk.yaml }
+  - { document_type: software_risk                      , label: "Software Risk", scope: device, file: risk/software-risk.yaml }
+  - { document_type: security_risk                      , label: "Security Risk", scope: device, file: risk/security-risk.yaml }
+  - { document_type: haz_soe_software                   , label: "Hazard (Software)", scope: device, file: risk/haz-soe-software.yaml }
+  - { document_type: haz_soe_security                   , label: "Hazard (Security)", scope: device, file: risk/haz-soe-security.yaml }
+  - { document_type: hazardous_situation                , label: "Hazardous Situation", scope: device, file: risk/hazardous-situation.yaml }
+  - { document_type: harm                               , label: "Harm", scope: device, file: risk/harm.yaml }
+  - { document_type: usability_plan                     , label: "Usability Plan", scope: device, file: usability/usability-plan.yaml }
+  - { document_type: use_specification                  , label: "Use Specification", scope: device, file: usability/use-specification.yaml }
+  - { document_type: task_analysis                      , label: "Task Analysis", scope: device, file: usability/task-analysis.yaml }
+  - { document_type: usability_evaluation               , label: "Usability Evaluation", scope: device, file: usability/usability-evaluation.yaml }
+  - { document_type: summative_evaluation               , label: "Summative Evaluation", scope: device, file: usability/summative-evaluation.yaml }
+  - { document_type: risk_management_plan               , label: "Risk Management Plan", scope: device, file: risk/risk-management-plan.yaml }
+  - { document_type: software_development_plan          , label: "Software Development Plan", scope: device, file: software/software-development-plan.yaml }
+  - { document_type: software_maintenance_plan          , label: "Software Maintenance Plan", scope: device, file: software/software-maintenance-plan.yaml }
+  - { document_type: soup_register                      , label: "SOUP Register", scope: device, file: software/soup-register.yaml }
+  - { document_type: anomaly                            , label: "Anomaly", scope: device, file: software/anomaly.yaml }
+  - { document_type: cybersecurity_plan                 , label: "Cybersecurity Plan", scope: device, file: cybersecurity/cybersecurity-plan.yaml }
+  - { document_type: sbom                               , label: "SBOM", scope: device, file: cybersecurity/sbom.yaml }
+  - { document_type: clinical_evaluation_plan           , label: "Clinical Evaluation Plan", scope: device, file: clinical/clinical-evaluation-plan.yaml }
+  - { document_type: clinical_evaluation_report         , label: "Clinical Evaluation Report", scope: device, file: clinical/clinical-evaluation-report.yaml }
+  - { document_type: post_market_surveillance_plan      , label: "Post-Market Surveillance Plan", scope: device, file: post-market/post-market-surveillance-plan.yaml }
+  - { document_type: post_market_feedback               , label: "Post-Market Feedback", scope: device, file: post-market/post-market-feedback.yaml }
+  - { document_type: labeling                           , label: "Labeling", scope: device, file: labeling/labeling.yaml }
+  - { document_type: product_development_plan           , label: "Product Development Plan", scope: device, file: product/product-development-plan.yaml }
+  - { document_type: intended_use                       , label: "Intended Use", scope: device, file: product/intended-use.yaml }
+  - { document_type: release_plan                       , label: "Release Plan", scope: device, file: change/release-plan.yaml }
+  - { document_type: design_review                      , label: "Design Review", scope: device, file: change/design-review.yaml }
+  - { document_type: supplier                           , label: "Supplier", scope: qms, file: qms/supplier.yaml }
+  - { document_type: report                             , label: "Report", scope: qms, file: qms/report.yaml }

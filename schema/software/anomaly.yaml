@@ -1,0 +1,23 @@
+# Auto-generated — run `pnpm generate:schemas` to regenerate
+schema_version: "1.0"
+document_type: anomaly
+label: "Anomaly"
+scope: device
+folder: docs/software/anomalies
+id_prefixes: [ANOM-]
+
+frontmatter:
+  id:               { required: true, type: string }
+  title:            { required: true, type: string }
+  status:           { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived"] }
+  type:             { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
+  category:         { required: true, type: enum, values: ["bug", "security_vulnerability", "regression", "performance"] }
+  severity:         { required: true, type: enum, values: ["critical", "major", "minor"] }
+  disposition:      { required: true, type: enum, values: ["open", "investigating", "resolved", "deferred", "will_not_fix"] }
+  affected_version: { required: false, type: string }
+  author:           { required: false, type: email, notes: "email address of primary author" }
+  reviewers:        { required: false, type: string[], notes: "department names e.g. Engineering" }
+  approvers:        { required: false, type: string[], notes: "department names e.g. Quality" }
+
+sections:
+  required: []

@@ -1,0 +1,21 @@
+# Auto-generated — run `pnpm generate:schemas` to regenerate
+schema_version: "1.0"
+document_type: hazardous_situation
+label: "Hazardous Situation"
+scope: device
+folder: docs/risk/situations
+id_prefixes: [HS-]
+
+frontmatter:
+  id:          { required: true, type: string }
+  title:       { required: true, type: string }
+  status:      { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived"] }
+  type:        { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
+  probability: { required: true, type: integer, min: 1, max: 5 }
+  results_in:  { required: false, type: string[] }
+  author:      { required: false, type: email, notes: "email address of primary author" }
+  reviewers:   { required: false, type: string[], notes: "department names e.g. Engineering" }
+  approvers:   { required: false, type: string[], notes: "department names e.g. Quality" }
+
+sections:
+  required: []
