@@ -1,6 +1,6 @@
 # Auto-generated — run `pnpm generate:schemas` to regenerate
 schema_version: "1.0"
-total_types: 39
+total_types: 40
 
 types:
   - { document_type: user_need                          , label: "User Need", scope: device, file: product/user-need.yaml }
@@ -40,5 +40,6 @@ types:
   - { document_type: intended_use                       , label: "Intended Use", scope: device, file: product/intended-use.yaml }
   - { document_type: release_plan                       , label: "Release Plan", scope: device, file: change/release-plan.yaml }
   - { document_type: design_review                      , label: "Design Review", scope: device, file: change/design-review.yaml }
+  - { document_type: release_notes                      , label: "Release Notes", scope: device, file: change/release-notes.yaml }
   - { document_type: supplier                           , label: "Supplier", scope: qms, file: qms/supplier.yaml }
   - { document_type: report                             , label: "Report", scope: qms, file: qms/report.yaml }
