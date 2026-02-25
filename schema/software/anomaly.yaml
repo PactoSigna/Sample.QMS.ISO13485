@@ -9,7 +9,7 @@ id_prefixes: [ANOM-]
 frontmatter:
   id:               { required: true, type: string }
   title:            { required: true, type: string }
-  status:           { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived"] }
+  status:           { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived", "example"] }
   type:             { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
   category:         { required: true, type: enum, values: ["bug", "security_vulnerability", "regression", "performance"] }
   severity:         { required: true, type: enum, values: ["critical", "major", "minor"] }
