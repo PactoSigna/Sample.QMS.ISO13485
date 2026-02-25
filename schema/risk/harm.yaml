@@ -9,7 +9,7 @@ id_prefixes: [HARM-]
 frontmatter:
   id:        { required: true, type: string }
   title:     { required: true, type: string }
-  status:    { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived"] }
+  status:    { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived", "example"] }
   type:      { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
   severity:  { required: true, type: integer, min: 1, max: 5 }
   category:  { required: false, type: string }
