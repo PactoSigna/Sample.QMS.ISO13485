@@ -17,6 +17,7 @@ frontmatter:
   detection_method: { required: false, type: string }
   threat_category:  { required: false, type: string }
   attack_vector:    { required: false, type: string }
+  hazard_category:  { required: false, type: string }
   author:           { required: false, type: email, notes: "email address of primary author" }
   reviewers:        { required: false, type: string[], notes: "department names e.g. Engineering" }
   approvers:        { required: false, type: string[], notes: "department names e.g. Quality" }

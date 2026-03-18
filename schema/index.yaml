@@ -1,6 +1,6 @@
 # Auto-generated — run `pnpm generate:schemas` to regenerate
 schema_version: "1.0"
-total_types: 40
+total_types: 41
 
 types:
   - { document_type: user_need                          , label: "User Need", scope: device, file: product/user-need.yaml }
@@ -19,6 +19,7 @@ types:
   - { document_type: haz_soe_security                   , label: "Hazard (Security)", scope: device, file: risk/haz-soe-security.yaml }
   - { document_type: hazardous_situation                , label: "Hazardous Situation", scope: device, file: risk/hazardous-situation.yaml }
   - { document_type: harm                               , label: "Harm", scope: device, file: risk/harm.yaml }
+  - { document_type: hazard_category                    , label: "Hazard Category", scope: device, file: risk/hazard-category.yaml }
   - { document_type: usability_plan                     , label: "Usability Plan", scope: device, file: usability/usability-plan.yaml }
   - { document_type: use_specification                  , label: "Use Specification", scope: device, file: usability/use-specification.yaml }
   - { document_type: task_analysis                      , label: "Task Analysis", scope: device, file: usability/task-analysis.yaml }

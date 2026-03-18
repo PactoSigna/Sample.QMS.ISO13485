@@ -21,6 +21,8 @@ frontmatter:
   residual_severity:       { required: false, type: integer, min: 1, max: 5 }
   residual_probability:    { required: false, type: integer, min: 1, max: 5 }
   residual_exploitability: { required: false, type: integer, min: 1, max: 5 }
+  cvss_score:              { required: false, type: number }
+  cvss_vector:             { required: false, type: string }
   author:                  { required: false, type: email, notes: "email address of primary author" }
   reviewers:               { required: false, type: string[], notes: "department names e.g. Engineering" }
   approvers:               { required: false, type: string[], notes: "department names e.g. Quality" }
