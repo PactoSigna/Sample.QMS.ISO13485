@@ -3,7 +3,7 @@ schema_version: "1.0"
 document_type: supplier
 label: "Supplier"
 scope: qms
-folder: docs/quality/suppliers
+folder: docs/suppliers
 id_prefixes: [SUP-]
 
 frontmatter:

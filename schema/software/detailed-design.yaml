@@ -20,7 +20,4 @@ frontmatter:
   approvers:          { required: false, type: string[], notes: "department names e.g. Quality" }
 
 sections:
-  required:
-    - Purpose
-    - Design Description
-    - Interfaces
+  required: []

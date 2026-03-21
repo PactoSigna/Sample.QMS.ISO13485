@@ -11,25 +11,25 @@ audits:
   - audit_id: IA-2026-001
     process_area: Design Control
     clause: "§7.3"
-    planned_date: 2026-03-15
+    planned_date: "2026-03-15"
     auditor: jane.smith@example.com
     status: completed
   - audit_id: IA-2026-002
     process_area: Document Control
     clause: "§4.2.4"
-    planned_date: 2026-06-20
+    planned_date: "2026-06-20"
     auditor: john.doe@example.com
     status: planned
   - audit_id: IA-2026-003
     process_area: Purchasing Controls
     clause: "§7.4"
-    planned_date: 2026-09-10
+    planned_date: "2026-09-10"
     auditor: jane.smith@example.com
     status: planned
   - audit_id: IA-2026-004
     process_area: CAPA Management
     clause: "§8.5.2"
-    planned_date: 2026-11-15
+    planned_date: "2026-11-15"
     auditor: john.doe@example.com
     status: planned
 ---
