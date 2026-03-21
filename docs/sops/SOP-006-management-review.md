@@ -107,5 +107,4 @@ Management review outputs include decisions and actions related to:
 
 - ISO 13485:2016 Section 5.6
 - 21 CFR 820.20
-- [QM-001](../quality-manual/QM-001-quality-manual.md) — Quality Manual
 - [POL-001](../policies/POL-001-quality-policy.md) — Quality Policy

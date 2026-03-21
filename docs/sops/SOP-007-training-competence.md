@@ -123,4 +123,3 @@ For each training event, the following is recorded:
 - ISO 13485:2016 Section 6.2
 - 21 CFR 820.25
 - [SOP-001](SOP-001-document-control.md) — Document Control
-- [QM-001](../quality-manual/QM-001-quality-manual.md) — Quality Manual

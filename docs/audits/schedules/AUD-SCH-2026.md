@@ -1,7 +1,6 @@
 ---
 id: AUD-SCH-2026
 title: Internal Audit Schedule 2026
-type: audit_schedule
 status: approved
 author: quality.manager@example.com
 reviewers: [quality.lead@example.com]

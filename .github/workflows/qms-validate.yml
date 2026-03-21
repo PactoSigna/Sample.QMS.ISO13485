@@ -24,45 +24,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Clone @pactosigna/schemas source
-        uses: actions/checkout@v4
-        with:
-          repository: PactoSigna/PactoSigna.Experience.GitWeb
-          path: _validator
-          sparse-checkout: |
-            packages/schemas
-            packages/shared
-            package.json
-            pnpm-workspace.yaml
-            tsconfig.base.json
-          sparse-checkout-cone-mode: false
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Build validator
-        working-directory: _validator
-        run: |
-          pnpm install --filter @pactosigna/shared --filter @pactosigna/schemas
-          pnpm --filter @pactosigna/shared build
-          pnpm --filter @pactosigna/schemas build
-
       - name: Run document validation
         id: validate
         run: |
           set +e
-          OUTPUT=$(node _validator/packages/schemas/dist/cli.js docs/ 2>&1)
+          OUTPUT=$(npx @pactosigna/schemas@latest validate docs/ 2>&1)
           EXIT_CODE=$?
           echo "$OUTPUT" > validation-result.json
+
+          # Strip any npm stderr lines before the JSON
+          JSON_OUTPUT=$(echo "$OUTPUT" | grep -v '^npm ' | tail -n +1)
+          echo "$JSON_OUTPUT" > validation-result.json
           echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
           # Parse summary for display
-          TOTAL=$(echo "$OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['total'])")
-          PASSED=$(echo "$OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['passed'])")
-          FAILED=$(echo "$OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['failed'])")
-          WARNINGS=$(echo "$OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['warnings'])")
+          TOTAL=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['total'])")
+          PASSED=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['passed'])")
+          FAILED=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['failed'])")
+          WARNINGS=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['warnings'])")
 
           echo "### Document Validation Results" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
@@ -77,7 +56,7 @@ jobs:
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "#### Errors" >> "$GITHUB_STEP_SUMMARY"
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
-            echo "$OUTPUT" | python3 -c "
+            echo "$JSON_OUTPUT" | python3 -c "
           import sys,json
           d=json.load(sys.stdin)
           for r in d['results']:
@@ -123,6 +102,6 @@ jobs:
         if: steps.validate.outputs.exit_code != '0'
         run: exit 1
 
-      - name: Clean up validator
+      - name: Clean up
         if: always()
-        run: rm -rf _validator validation-result.json
+        run: rm -f validation-result.json

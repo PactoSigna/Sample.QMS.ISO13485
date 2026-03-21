@@ -1,7 +1,6 @@
 ---
 id: AUD-RPT-001
 title: "Internal Audit: Design Control Q1 2026"
-type: audit_report
 status: approved
 author: jane.smith@example.com
 reviewers: [quality.lead@example.com]

@@ -1,7 +1,6 @@
 ---
 id: AUD-RPT-002
 title: "Internal Audit Report: ISO 13485 QMS Audit"
-type: audit_report
 status: approved
 author: quality.lead@example.com
 reviewers: [quality.manager@example.com]
@@ -18,12 +17,40 @@ findings:
 source: audit-report.pdf
 ---
 
-# Internal Audit Report - AUD-RPT-002
+# Internal Audit Report: ISO 13485 QMS Audit
 
-This is an internal audit report conducted by an ISO 13485 Lead Auditor covering document control (Clause 4.2) and design development (Clause 7.3) processes.
+## Scope
 
-## Traceability
+This audit covered Document Control (ISO 13485:2016 §4.2) and Design and Development (§7.3) processes, examining procedural compliance and record keeping across all active projects.
 
-**Related to:** [SOP-001](../sops/SOP-001-document-control.md) - Document Control Procedure
-**Related to:** [SOP-002](../sops/SOP-002-design-development.md) - Design & Development Procedure
-**Related to:** [WI-003](../work-instructions/WI-003-release-signing.md) - Release Signing Work Instruction
+## Methodology
+
+The audit was conducted on 2026-01-20 using the following approach:
+
+1. **Document review**: Examination of controlled document registers, distribution lists, and revision histories
+2. **Record sampling**: Review of 10 design development records and 5 document control records
+3. **Personnel interviews**: Interviews with 2 quality team members and 1 engineering lead
+4. **Process observation**: Observation of document review workflow in the QMS platform
+
+### Reference Documents
+
+- [SOP-001](../../sops/SOP-001-document-control.md) - Document Control Procedure
+- [SOP-002](../../sops/SOP-002-design-development.md) - Design & Development Procedure
+- [WI-003](../../work-instructions/WI-003-release-signing.md) - Release Signing Work Instruction
+
+## Findings
+
+### F-001: Document Distribution List Not Updated (Observation)
+
+**Classification**: Observation
+**Clause**: ISO 13485 §4.2.4
+
+The controlled document distribution list was not updated to reflect the latest revision of SOP-001. The previous revision's distribution list was still in use. This did not result in any personnel using outdated documents, as the QMS platform automatically serves the current version.
+
+**Recommendation**: Automate distribution list updates when controlled documents are revised in the QMS platform.
+
+## Conclusion
+
+The Document Control and Design Development processes are well-established and generally compliant with ISO 13485:2016 requirements. One observation was identified regarding document distribution list maintenance. No nonconformances were found.
+
+Overall audit assessment: Both processes meet ISO 13485 requirements. The observation is a low-priority improvement opportunity.
