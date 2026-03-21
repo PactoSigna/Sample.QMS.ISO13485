@@ -28,20 +28,15 @@ jobs:
         id: validate
         run: |
           set +e
-          OUTPUT=$(npx @pactosigna/schemas@latest validate docs/ 2>&1)
+          npx --yes @pactosigna/schemas@latest validate docs/ > validation-result.json 2>/dev/null
           EXIT_CODE=$?
-          echo "$OUTPUT" > validation-result.json
-
-          # Strip any npm stderr lines before the JSON
-          JSON_OUTPUT=$(echo "$OUTPUT" | grep -v '^npm ' | tail -n +1)
-          echo "$JSON_OUTPUT" > validation-result.json
           echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
           # Parse summary for display
-          TOTAL=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['total'])")
-          PASSED=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['passed'])")
-          FAILED=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['failed'])")
-          WARNINGS=$(echo "$JSON_OUTPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['summary']['warnings'])")
+          TOTAL=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['total'])")
+          PASSED=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['passed'])")
+          FAILED=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['failed'])")
+          WARNINGS=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['warnings'])")
 
           echo "### Document Validation Results" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
@@ -55,10 +50,10 @@ jobs:
           if [ "$EXIT_CODE" -ne 0 ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "#### Errors" >> "$GITHUB_STEP_SUMMARY"
-            echo '```json' >> "$GITHUB_STEP_SUMMARY"
-            echo "$JSON_OUTPUT" | python3 -c "
-          import sys,json
-          d=json.load(sys.stdin)
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "
+          import json
+          d=json.load(open('validation-result.json'))
           for r in d['results']:
             if r['errors']:
               print(f\"{r['path']} ({r['documentId']}):\")
