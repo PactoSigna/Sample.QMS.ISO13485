@@ -1,12 +1,11 @@
 ---
 id: AUD-RPT-001
 title: "Internal Audit: Design Control Q1 2026"
-type: audit_report
 status: approved
 author: jane.smith@example.com
 reviewers: [quality.lead@example.com]
 approvers: [quality.director@example.com]
-audit_date: 2026-03-15
+audit_date: "2026-03-15"
 audit_id: IA-2026-001
 process_area: Design Control
 clause: "§7.3"

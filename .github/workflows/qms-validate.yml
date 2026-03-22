@@ -4,41 +4,99 @@ on:
   pull_request:
     paths:
       - 'docs/**'
-
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 jobs:
   validate:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - uses: PactoSigna/qms-actions@v1
+      - uses: actions/setup-node@v4
         with:
-          type: qms
-          mode: pr
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '20'
 
-  export:
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Run document validation
+        id: validate
+        run: |
+          set +e
+          npx --yes @pactosigna/schemas@latest validate docs/ > validation-result.json 2>/dev/null
+          EXIT_CODE=$?
+          echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
-      - uses: PactoSigna/qms-actions@v1
+          # Parse summary for display
+          TOTAL=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['total'])")
+          PASSED=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['passed'])")
+          FAILED=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['failed'])")
+          WARNINGS=$(python3 -c "import json; d=json.load(open('validation-result.json')); print(d['summary']['warnings'])")
+
+          echo "### Document Validation Results" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Metric | Count |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|--------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Total | $TOTAL |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Passed | $PASSED |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Failed | $FAILED |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Warnings | $WARNINGS |" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$EXIT_CODE" -ne 0 ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "#### Errors" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "
+          import json
+          d=json.load(open('validation-result.json'))
+          for r in d['results']:
+            if r['errors']:
+              print(f\"{r['path']} ({r['documentId']}):\")
+              for e in r['errors']:
+                print(f\"  - [{e['code']}] {e['message']}\")
+          " >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && steps.validate.outputs.exit_code != '0'
+        uses: actions/github-script@v7
         with:
-          type: qms
-          mode: release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('validation-result.json', 'utf8'));
+            const { summary, results } = result;
+            const errors = results.filter(r => r.errors.length > 0);
+
+            let body = `### Document Validation Failed\n\n`;
+            body += `**${summary.failed}** of ${summary.total} documents have errors.\n\n`;
+
+            for (const doc of errors) {
+              body += `#### \`${doc.path}\` (${doc.documentId})\n`;
+              for (const e of doc.errors) {
+                body += `- \`${e.code}\`: ${e.message}\n`;
+              }
+              body += '\n';
+            }
+
+            body += `\n---\n*Validated with @pactosigna/schemas*`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+      - name: Fail if validation errors
+        if: steps.validate.outputs.exit_code != '0'
+        run: exit 1
+
+      - name: Clean up
+        if: always()
+        run: rm -f validation-result.json
