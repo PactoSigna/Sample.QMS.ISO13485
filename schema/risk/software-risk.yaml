@@ -21,5 +21,4 @@ frontmatter:
   approvers:                       { required: false, type: string[], notes: "department names e.g. Quality" }
 
 sections:
-  required:
-    - Harm Assessment
+  required: []

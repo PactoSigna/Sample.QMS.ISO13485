@@ -3,8 +3,8 @@ schema_version: "1.0"
 document_type: management_review
 label: "Management Review"
 scope: qms
-folder: docs/management-reviews
-id_prefixes: [MR-]
+folder: unknown
+id_prefixes: []
 
 frontmatter:
   id:                 { required: true, type: string }
