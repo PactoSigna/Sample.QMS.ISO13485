@@ -1,12 +1,11 @@
+# Strict authoring schema. Sync engine uses lenient "requirement" schema with category=product.
 # Auto-generated — run `pnpm generate:schemas` to regenerate
 schema_version: "1.0"
-document_type: requirement
-label: "Requirement"
+document_type: product_requirement
+label: "Product Requirement (strict)"
 scope: device
-folders:
-  - docs/product/requirements
-  - docs/software/requirements
-id_prefixes: [PRS-, SRS-]
+folder: docs/product/requirements
+id_prefixes: [PRS-]
 
 frontmatter:
   id:               { required: true, type: string }
@@ -16,11 +15,11 @@ frontmatter:
   req_type:         { required: false, type: enum, values: ["functional", "interface", "performance", "security", "usability", "safety", "regulatory"] }
   format:           { required: false, type: enum, values: ["standard", "user_story"] }
   fulfillment_type: { required: false, type: enum, values: ["software", "labeling", "clinical", "usability", "regulatory_doc", "process"] }
-  traces_from:      { required: false, type: string[] }
+  traces_from:      { required: true, type: string[] }
   traces_to:        { required: false, type: string[] }
-  author:           { required: false, type: email, notes: "email address of primary author" }
+  author:           { required: true, type: string }
   reviewers:        { required: false, type: string[], notes: "department names e.g. Engineering" }
-  approvers:        { required: false, type: string[], notes: "department names e.g. Quality" }
+  approvers:        { required: true, type: string[] }
 
 sections:
   required: []
