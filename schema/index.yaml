@@ -1,6 +1,6 @@
 # Auto-generated — run `pnpm generate:schemas` to regenerate
 schema_version: "1.0"
-total_types: 43
+total_types: 44
 
 types:
   - { document_type: user_need                          , label: "User Need", scope: device, file: product/user-need.yaml }
@@ -46,3 +46,4 @@ types:
   - { document_type: software_test_plan                 , label: "Software Test Plan", scope: device, file: software/software-test-plan.yaml }
   - { document_type: product_requirement                , label: "Product Requirement (strict)", scope: device, file: product/product-requirement.yaml }
   - { document_type: software_requirement               , label: "Software Requirement (strict)", scope: device, file: software/software-requirement.yaml }
+  - { document_type: job_description                    , label: "Job Description", scope: qms, file: qms/job-description.yaml }
