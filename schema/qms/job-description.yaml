@@ -1,0 +1,29 @@
+# Auto-generated — run `pnpm generate:schemas` to regenerate
+schema_version: "1.0"
+document_type: job_description
+label: "Job Description"
+scope: qms
+folder: docs/personnel
+id_prefixes: [JD-]
+
+frontmatter:
+  id:              { required: true, type: string }
+  title:           { required: true, type: string }
+  department:      { required: true, type: string }
+  status:          { required: true, type: enum, values: ["draft", "in_review", "approved", "effective", "archived", "example"] }
+  type:            { required: false, inferred: true, notes: "inferred from folder path; omit unless overriding" }
+  version:         { required: false, type: string }
+  department_role: { required: false, type: enum, values: ["manager", "member"] }
+  author:          { required: false, type: string, notes: "name or email of primary author" }
+  reviewers:       { required: false, type: string[], notes: "department names e.g. Engineering" }
+  approvers:       { required: false, type: string[], notes: "department names e.g. Executive" }
+  effective_date:  { required: false, type: string, notes: "ISO 8601 date" }
+
+sections:
+  required:
+    - Purpose
+    - Responsibilities
+    - Qualifications
+    - Authorities
+    - Reporting Structure
+    - Training Requirements
