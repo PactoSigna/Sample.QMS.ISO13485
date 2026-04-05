@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
+      "text": "How are approved suppliers documented in PactoSigna?",
+      "options": [
+        { "text": "In a single spreadsheet uploaded to the platform", "explanation": "PactoSigna uses structured supplier documents, not spreadsheets." },
+        { "text": "As supplier document types with structured frontmatter including name, category, status, and evaluation date", "correct": true, "explanation": "Per Section 5.3, suppliers are documented as supplier type documents in PactoSigna with structured frontmatter capturing supplier details." },
+        { "text": "In email records maintained by the purchasing department", "explanation": "Supplier records are managed as controlled documents in PactoSigna." },
+        { "text": "Suppliers are not tracked in PactoSigna", "explanation": "PactoSigna includes a supplier document type specifically for ASL management." }
+      ]
+    },
+    {
+      "type": "single-choice",
       "text": "How often must critical suppliers be re-evaluated?",
       "options": [
-        { "text": "Every 6 months", "explanation": "Six months exceeds the minimum frequency for critical suppliers." },
-        { "text": "Annually", "correct": true, "explanation": "Per Section 5.7, critical suppliers are re-evaluated annually." },
+        { "text": "Every 6 months", "explanation": "Six months is more frequent than required for critical suppliers." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.7, critical suppliers are re-evaluated annually, while non-critical suppliers are re-evaluated biennially." },
         { "text": "Every 2 years", "explanation": "Biennial re-evaluation applies to non-critical suppliers, not critical ones." },
-        { "text": "Only after a nonconformance", "explanation": "Re-evaluation is scheduled, not only triggered by nonconformances." }
+        { "text": "Only when a nonconformance occurs", "explanation": "Re-evaluation is scheduled regardless of nonconformances." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "PactoSigna captures a Software Bill of Materials (SBOM) for each release, providing a complete inventory of software components.",
+      "correct": true,
+      "explanation": "Per Section 5.5, PactoSigna captures the SBOM for each release alongside the SOUP register."
+    },
+    {
+      "type": "single-choice",
+      "text": "What must be verified when receiving a SOUP software component?",
+      "options": [
+        { "text": "Only the component name", "explanation": "Multiple verification checks are required, not just the name." },
+        { "text": "Version, integrity check (checksums/signatures), license compliance, and security scan", "correct": true, "explanation": "Per Section 5.6, incoming verification for software components includes version verification, integrity checks, license compliance, and security scans." },
+        { "text": "Only the license type", "explanation": "License compliance is one of several verification steps required." },
+        { "text": "Developer certifications and qualifications", "explanation": "Developer certifications are not part of SOUP incoming verification." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What factors determine the rigor of SOUP risk assessment per IEC 62304?",
+      "options": [
+        { "text": "The cost of the software component", "explanation": "Cost is not a factor in IEC 62304 risk assessment." },
+        { "text": "The device's safety classification (Class A, B, or C)", "correct": true, "explanation": "Per Section 5.5, SOUP risk is assessed based on the device's IEC 62304 safety classification, with higher classes requiring more rigorous assessment." },
+        { "text": "The number of downloads the component has", "explanation": "Download count is not part of IEC 62304 risk assessment criteria." },
+        { "text": "The programming language used", "explanation": "Programming language is not a factor in IEC 62304 safety classification." }
       ]
     },
     {
       "type": "single-choice",
       "text": "What approval is required to purchase from a supplier not on the Approved Supplier List?",
       "options": [
-        { "text": "Department head approval", "explanation": "Department head approval is not sufficient for non-ASL purchases." },
-        { "text": "Quality Manager approval", "correct": true, "explanation": "Per Section 5.3, purchases from non-ASL suppliers require Quality Manager approval." },
-        { "text": "No special approval needed", "explanation": "Non-ASL purchases require explicit Quality Manager approval." },
-        { "text": "CEO approval", "explanation": "CEO approval is not specifically required; Quality Manager approval is sufficient." }
-      ]
-    },
-    {
-      "type": "true-false",
-      "text": "A supplier providing only office supplies would be classified as a critical supplier.",
-      "correct": false,
-      "explanation": "Per Section 5.1, critical suppliers are those whose products or services directly affect device safety or regulatory compliance. Office supplies are non-critical."
-    },
-    {
-      "type": "single-choice",
-      "text": "Which of the following is NOT a supplier evaluation criterion?",
-      "options": [
-        { "text": "Quality capability and certifications", "explanation": "Quality capability is a required evaluation criterion." },
-        { "text": "Company founding year", "correct": true, "explanation": "Company age is not an evaluation criterion. Criteria include quality capability, technical capability, regulatory compliance, financial stability, and security posture." },
-        { "text": "Technical competence and experience", "explanation": "Technical capability is a required evaluation criterion." },
-        { "text": "Security posture and certifications", "explanation": "Security posture is a required criterion for cloud/infrastructure suppliers." }
-      ]
-    },
-    {
-      "type": "single-choice",
-      "text": "What must be verified when receiving a SOUP software component?",
-      "options": [
-        { "text": "Source code readability", "explanation": "SOUP source code review is not a standard incoming verification step." },
-        { "text": "Version, integrity check, and license compliance", "correct": true, "explanation": "Per Section 5.6, software component verification includes version verification, integrity check (checksums), and license compliance." },
-        { "text": "Developer certifications", "explanation": "Developer certifications are not an incoming verification requirement." },
-        { "text": "Number of GitHub stars", "explanation": "Community popularity metrics are not part of formal incoming verification." }
+        { "text": "No special approval needed", "explanation": "Non-ASL purchases require explicit approval with documentation." },
+        { "text": "Quality Manager approval with documented justification", "correct": true, "explanation": "Per Section 5.3, purchases from suppliers not on the ASL require Quality Manager approval with documented justification." },
+        { "text": "CEO approval", "explanation": "Quality Manager approval is sufficient; CEO approval is not specifically required." },
+        { "text": "Department head approval only", "explanation": "Department head approval alone is not sufficient; Quality Manager approval is required." }
       ]
     }
   ]

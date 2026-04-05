@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
-      "text": "What is the minimum passing score for quiz-based training?",
+      "text": "How does PactoSigna automatically assign training when a new release is published?",
       "options": [
-        { "text": "60%", "explanation": "60% does not meet the minimum passing threshold." },
-        { "text": "70%", "explanation": "70% does not meet the minimum passing threshold." },
-        { "text": "80%", "correct": true, "explanation": "Per Section 5.3, quiz-based training requires a passing score of ≥ 80%." },
-        { "text": "100%", "explanation": "100% is not required; the minimum is 80%." }
+        { "text": "An email is sent to department heads to manually assign training", "explanation": "Training assignment is automated, not manual." },
+        { "text": "The training assignment worker creates tasks for members in departments listed in the document's training frontmatter", "correct": true, "explanation": "Per Section 5.4, when a release is published, the training assignment worker (Cloud Tasks) identifies documents with training frontmatter and creates tasks for members in the specified required_departments." },
+        { "text": "All organization members are assigned training for every document", "explanation": "Training is scoped to specific departments defined in each document's frontmatter." },
+        { "text": "Training is only assigned manually by Quality", "explanation": "PactoSigna automates assignment through the training assignment worker upon release publication." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "Within how many days must new employees complete their onboarding training?",
+      "text": "What are the states in PactoSigna's training task lifecycle?",
       "options": [
-        { "text": "7 days", "explanation": "7 days is too short for the full onboarding program." },
-        { "text": "14 days", "explanation": "14 days does not match the requirement." },
-        { "text": "30 days", "correct": true, "explanation": "Per Section 5.4, new employees must complete onboarding training within 30 days." },
-        { "text": "90 days", "explanation": "90 days exceeds the required timeframe." }
+        { "text": "new → active → done", "explanation": "These are not the correct training task states." },
+        { "text": "assigned → in_progress → completed / overdue", "correct": true, "explanation": "Per Section 5.5, training tasks follow the lifecycle: assigned → in_progress → completed (with Part 11 signature) or overdue (flagged by daily CRON worker)." },
+        { "text": "pending → started → passed → archived", "explanation": "These are not the correct training task states." },
+        { "text": "created → assigned → submitted → approved", "explanation": "These are not the correct training task states." }
       ]
     },
     {
       "type": "true-false",
-      "text": "When an SOP is updated, re-training is automatically assigned to personnel in the SOP's required departments.",
+      "text": "Quiz definitions and correct answers are stored server-side in PactoSigna to prevent client-side tampering, in compliance with Part 11.",
       "correct": true,
-      "explanation": "Per Section 5.5, the QMS platform automatically assigns re-training when an SOP is updated."
+      "explanation": "Per Section 5.6, quiz definitions with correct answers are stored server-side. This is a Part 11 security requirement to prevent client-side manipulation of scoring."
     },
     {
       "type": "single-choice",
-      "text": "Which of the following is NOT a trigger for identifying training needs?",
+      "text": "What is the default passing threshold for quiz-based training assessments?",
       "options": [
-        { "text": "New hire onboarding", "explanation": "New hires require training per Section 5.2." },
-        { "text": "Role changes or promotions", "explanation": "Role changes trigger training needs assessment per Section 5.2." },
-        { "text": "Employee birthday", "correct": true, "explanation": "Employee birthdays are not a training needs trigger. Triggers include onboarding, role changes, SOP updates, nonconformances, and regulatory changes." },
-        { "text": "Nonconformances indicating knowledge gaps", "explanation": "Knowledge-gap nonconformances trigger training per Section 5.2." }
+        { "text": "60%", "explanation": "60% is below the default passing threshold." },
+        { "text": "70%", "explanation": "70% is below the default passing threshold." },
+        { "text": "80%", "correct": true, "explanation": "Per Section 5.6, the passing threshold is configurable with a default of 80%." },
+        { "text": "100%", "explanation": "100% is not required; the default is 80%." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "What verification method is used for instructor-led training?",
+      "text": "What does PactoSigna's Competency View dashboard show?",
       "options": [
-        { "text": "Quiz with ≥ 80% score", "explanation": "Quizzes are used for quiz-based training, not instructor-led." },
-        { "text": "Electronic acknowledgment", "explanation": "Acknowledgment is used for policies, not instructor-led training." },
-        { "text": "Instructor sign-off", "correct": true, "explanation": "Per Section 5.3, instructor-led training is verified by instructor sign-off." },
-        { "text": "Self-certification", "explanation": "Self-certification is not an accepted verification method." }
+        { "text": "Employee salary information and performance ratings", "explanation": "The Competency View focuses on training and competency, not HR data." },
+        { "text": "Department → job descriptions → training status → identified competency gaps", "correct": true, "explanation": "Per Section 5.1, PactoSigna's Competency View provides a derived dashboard showing departments, their job descriptions, required training per role, completion status, and competency gaps." },
+        { "text": "Only the list of overdue training tasks", "explanation": "The Competency View shows the full competency landscape, not just overdue items." },
+        { "text": "Document sync history and validation errors", "explanation": "That information is in the Document Sync module, not the Competency View." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How does PactoSigna handle overdue training tasks?",
+      "options": [
+        { "text": "Overdue tasks are automatically deleted after 30 days", "explanation": "Overdue tasks are never deleted; they are tracked and escalated." },
+        { "text": "A daily CRON worker identifies overdue tasks, sends notifications, and escalates through member → department head → Quality", "correct": true, "explanation": "Per Section 5.8, PactoSigna's overdue notification worker runs daily, sending escalating notifications at day 1 (member), day 7 (department head), and day 14 (Quality Management Representative)." },
+        { "text": "The member's account is locked until training is completed", "explanation": "Account locking is not part of the overdue training process." },
+        { "text": "Nothing happens; overdue training is only reviewed annually", "explanation": "PactoSigna actively monitors and escalates overdue training daily." }
       ]
     }
   ]

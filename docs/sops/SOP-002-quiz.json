@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
-      "text": "What are the primary regulatory standards governing medical device software design and development?",
+      "text": "What frontmatter fields does PactoSigna use to establish bidirectional traceability between requirements?",
       "options": [
-        { "text": "IEC 62304 and ISO 13485", "correct": true, "explanation": "SOP-002 defines the process per IEC 62304 and ISO 13485." },
-        { "text": "ISO 9001 and ISO 14001", "explanation": "ISO 9001 is a general quality standard and ISO 14001 is environmental management." },
-        { "text": "IEC 61508 and ISO 26262", "explanation": "These standards apply to functional safety in industrial/automotive, not medical devices." },
-        { "text": "FDA CFR Part 820 only", "explanation": "While Part 820 applies, the SOP specifically references IEC 62304 and ISO 13485." }
+        { "text": "traces_to and traces_from", "correct": true, "explanation": "Per Section 5.2, PactoSigna uses traces_to and traces_from frontmatter fields for bidirectional linking across the traceability chain (UN → PRS → SRS → HLD/SDD → Tests)." },
+        { "text": "links_to and links_from", "explanation": "The correct field names are traces_to and traces_from." },
+        { "text": "parent and child", "explanation": "PactoSigna uses traces_to and traces_from, not parent/child fields." },
+        { "text": "requirements and implementations", "explanation": "These are not PactoSigna frontmatter field names." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "What is the correct sequence for design input documents?",
+      "text": "What does PactoSigna's gap detection engine identify?",
       "options": [
-        { "text": "SRS → PRS → UN", "explanation": "The sequence flows from user needs downward, not upward." },
-        { "text": "UN → PRS → SRS", "correct": true, "explanation": "User Needs (UN) are captured first, then Product Requirements (PRS), then Software Requirements (SRS)." },
-        { "text": "PRS → UN → SRS", "explanation": "User Needs must be captured before deriving product requirements." },
-        { "text": "SRS → UN → PRS", "explanation": "Software requirements are derived last, after user needs and product requirements." }
+        { "text": "Spelling and grammar errors in requirements documents", "explanation": "Gap detection focuses on traceability links, not content quality." },
+        { "text": "Broken or missing trace links across the traceability chain", "correct": true, "explanation": "Per Section 5.3, PactoSigna's gap detection engine automatically identifies broken or missing trace links, ensuring traceability integrity." },
+        { "text": "Missing code comments in source files", "explanation": "Gap detection operates on document traceability, not source code." },
+        { "text": "Formatting inconsistencies in frontmatter", "explanation": "Frontmatter formatting is handled by Zod schema validation, not gap detection." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "How are test cases linked to requirements for design verification?",
+      "text": "What is the correct design input hierarchy for the traceability chain?",
       "options": [
-        { "text": "Using 'Validates:' links", "explanation": "'Validates:' links are used for validation against user needs, not verification." },
-        { "text": "Using 'Verifies:' links", "correct": true, "explanation": "Test cases use 'Verifies:' links to demonstrate requirements are met." },
-        { "text": "Using 'References:' links", "explanation": "'References:' is not the standard link type for verification traceability." },
-        { "text": "Using 'Traces:' links", "explanation": "'Traces:' is not the standard link type used in the QMS." }
+        { "text": "SRS → PRS → UN → Tests", "explanation": "The chain flows from user needs downward, not upward from software requirements." },
+        { "text": "UN → PRS → SRS → HLD/SDD → Tests", "correct": true, "explanation": "Per Section 3, the traceability chain flows from User Need → Product Requirement → Software Requirement → Architecture → Tests." },
+        { "text": "HLD → SDD → UN → PRS → SRS", "explanation": "Architecture documents are design outputs, not the starting point of the chain." },
+        { "text": "Tests → SRS → PRS → UN", "explanation": "This is the reverse direction. The chain starts with User Needs." }
       ]
     },
     {
       "type": "true-false",
-      "text": "Design validation confirms that the product meets software requirements.",
-      "correct": false,
-      "explanation": "Design validation confirms the product meets user needs. Design verification confirms software requirements are met."
+      "text": "PactoSigna's Release workflow enforces sign-off requirements that scale based on the IEC 62304 safety classification (Class A, B, or C).",
+      "correct": true,
+      "explanation": "Per Section 5.7, the Release includes IEC 62304 safety classification, and the platform enforces sign-off requirements scaled to the classification level."
     },
     {
       "type": "single-choice",
-      "text": "What must be completed before design transfer (release)?",
+      "text": "What is a Design Change Order (DCO) in PactoSigna?",
       "options": [
-        { "text": "Verification activities only", "explanation": "Both verification and risk management must be complete." },
-        { "text": "Risk management activities only", "explanation": "Both verification and risk management must be complete." },
-        { "text": "All verification and risk management activities", "correct": true, "explanation": "Per the Design Transfer section, all verification and risk management activities must be complete." },
-        { "text": "Customer acceptance testing", "explanation": "Customer acceptance is not listed as a prerequisite for design transfer." }
+        { "text": "A request to change the project budget", "explanation": "A DCO is a controlled change record within the Release workflow, not a budget change." },
+        { "text": "A controlled change record documenting rationale and scope of design changes", "correct": true, "explanation": "Per Section 5.8, a DCO documents the description, rationale, impact assessment, and verification plan for design changes." },
+        { "text": "An automated code review tool", "explanation": "A DCO is a change management document, not a code review tool." },
+        { "text": "A notification sent to customers about product updates", "explanation": "A DCO is an internal design control record, not a customer notification." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Before design transfer (release), which of the following must be complete?",
+      "options": [
+        { "text": "Only verification activities", "explanation": "Multiple prerequisites must be met, not just verification." },
+        { "text": "Verification, validation, risk management review, all signatures, and no critical traceability gaps", "correct": true, "explanation": "Per Section 5.7, all verification, validation, risk management, signatures, and gap detection clearance must be complete before release." },
+        { "text": "Only electronic signatures from approvers", "explanation": "Signatures are one of several prerequisites for design transfer." },
+        { "text": "Customer acceptance testing only", "explanation": "Customer acceptance is not the sole prerequisite for design transfer." }
       ]
     }
   ]
