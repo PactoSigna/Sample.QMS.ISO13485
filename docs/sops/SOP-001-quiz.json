@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
-      "text": "What is the correct naming convention for Standard Operating Procedures?",
+      "text": "What metadata format does PactoSigna use to validate document structure at sync time?",
       "options": [
-        { "text": "SOP-XXX", "correct": true, "explanation": "SOPs follow the SOP-XXX naming convention as defined in Section 1." },
-        { "text": "POL-XXX", "explanation": "POL-XXX is the naming convention for Policies." },
-        { "text": "WI-XXX", "explanation": "WI-XXX is the naming convention for Work Instructions." },
-        { "text": "DOC-XXX", "explanation": "DOC-XXX is not a valid naming convention in the QMS." }
+        { "text": "YAML frontmatter validated against Zod schemas", "correct": true, "explanation": "PactoSigna's Document Sync engine validates YAML frontmatter against Zod schemas at sync time, catching errors before documents enter the platform." },
+        { "text": "JSON headers embedded in markdown comments", "explanation": "PactoSigna uses YAML frontmatter, not JSON headers." },
+        { "text": "XML metadata files alongside each document", "explanation": "PactoSigna uses inline YAML frontmatter within the markdown file itself." },
+        { "text": "Manual metadata entry in the web interface", "explanation": "PactoSigna is git-native — metadata is authored in the git repository as frontmatter, not entered in a web form." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "How are document changes submitted for review?",
+      "text": "What is the correct document status lifecycle in PactoSigna?",
       "options": [
-        { "text": "Email to quality team", "explanation": "Changes are submitted via GitHub Pull Requests, not email." },
-        { "text": "GitHub Pull Request", "correct": true, "explanation": "Authors submit changes via GitHub Pull Requests as defined in the Review Process." },
-        { "text": "Upload to shared drive", "explanation": "The QMS uses Git-based version control, not shared drives." },
-        { "text": "Direct edit in production", "explanation": "Direct production edits bypass the required review and approval process." }
-      ]
-    },
-    {
-      "type": "single-choice",
-      "text": "What is the initial status of a newly created document?",
-      "options": [
-        { "text": "approved", "explanation": "New documents must go through review and approval before reaching approved status." },
-        { "text": "draft", "correct": true, "explanation": "Per Section 1, initial status is set to 'draft'." },
-        { "text": "in_review", "explanation": "Documents start as draft before entering review." },
-        { "text": "pending", "explanation": "The correct initial status is 'draft'." }
+        { "text": "draft → approved → effective → archived", "explanation": "This is missing the 'in_review' state between draft and approved." },
+        { "text": "draft → in_review → approved → effective → archived", "correct": true, "explanation": "Per Section 5.5, the full lifecycle is draft → in_review → approved → effective → archived." },
+        { "text": "new → pending → active → retired", "explanation": "These are not the correct status values used by PactoSigna." },
+        { "text": "draft → approved → published → archived", "explanation": "PactoSigna uses 'effective' not 'published' for documents in active use." }
       ]
     },
     {
       "type": "true-false",
-      "text": "A document can be merged to the main branch before all approvers have signed off.",
-      "correct": false,
-      "explanation": "Per the Approval Process, all reviewers must approve and approvers must sign off before the PR is merged."
+      "text": "PactoSigna's electronic signatures for document approval capture the signer's identity, the signature meaning, a server-generated timestamp, and the document version bound to a git commit SHA.",
+      "correct": true,
+      "explanation": "Per Section 5.4, each Part 11-compliant electronic signature captures signer identity, meaning, server timestamp, and commit SHA binding."
     },
     {
       "type": "single-choice",
-      "text": "Who is responsible for maintaining the document control system?",
+      "text": "What happens when a document with a 'training' frontmatter block is updated and a new release is published?",
       "options": [
-        { "text": "Engineering", "explanation": "Engineering creates content but does not maintain the document control system." },
-        { "text": "Quality", "correct": true, "explanation": "Per the Responsibilities section, Quality maintains the document control system." },
-        { "text": "Document Author", "explanation": "Authors create and maintain document content, not the control system." },
-        { "text": "Reviewers", "explanation": "Reviewers verify technical accuracy, not maintain the system." }
+        { "text": "Nothing — training must be manually reassigned", "explanation": "PactoSigna automatically assigns training when documents with training blocks are updated." },
+        { "text": "Training is automatically re-assigned to members in the specified departments", "correct": true, "explanation": "Per Section 5.6, training re-assignment is triggered automatically when documents with training frontmatter are updated and a release is published." },
+        { "text": "An email is sent to the Quality department to manually assign training", "explanation": "The process is automated through PactoSigna's training assignment worker." },
+        { "text": "The document is flagged for manual training review", "explanation": "Assignment is automatic, not a manual flagging process." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How does PactoSigna enforce document change control?",
+      "options": [
+        { "text": "Through email-based approval workflows", "explanation": "PactoSigna uses git-based workflows and electronic signatures, not email approvals." },
+        { "text": "Through the Release workflow with Design Change Orders (DCO)", "correct": true, "explanation": "Per Section 5.6, the PactoSigna Release workflow uses a Design Change Order (DCO) to control and track changes to approved documents." },
+        { "text": "Through direct editing of documents in the web interface", "explanation": "PactoSigna is git-native — documents are authored in git, not the web interface." },
+        { "text": "Through manual version numbering by the author", "explanation": "Version control is managed by git commit history and the Release workflow." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Who is responsible for maintaining the document control system and monitoring sync events for validation errors?",
+      "options": [
+        { "text": "Document Author", "explanation": "Authors create content but Quality maintains the system." },
+        { "text": "Quality", "correct": true, "explanation": "Per Section 4, Quality maintains the document control system, monitors sync events for schema validation errors, and manages folder rules and naming conventions." },
+        { "text": "Repository Admin", "explanation": "Repository Admins configure repository settings but Quality maintains the document control system." },
+        { "text": "Engineering", "explanation": "Engineering creates technical content but Quality is responsible for the document control system." }
       ]
     }
   ]

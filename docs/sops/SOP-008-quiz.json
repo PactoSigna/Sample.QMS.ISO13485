@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
+      "text": "What PactoSigna document type is used to plan the annual internal audit program?",
+      "options": [
+        { "text": "audit_schedule", "correct": true, "explanation": "Per Section 5.1, the audit program is documented as an audit_schedule document type in PactoSigna with structured frontmatter." },
+        { "text": "audit_plan", "explanation": "Individual audit plans are part of the audit execution, not the annual program. The program uses the audit_schedule document type." },
+        { "text": "quality_review", "explanation": "Quality Reviews are for management review, not audit planning." },
+        { "text": "sop", "explanation": "SOPs define procedures; the audit schedule is a separate document type." }
+      ]
+    },
+    {
+      "type": "single-choice",
       "text": "What is the key requirement for selecting an internal auditor?",
       "options": [
         { "text": "Must be from the Quality department", "explanation": "Auditors can be from any department as long as they are independent of the area being audited." },
         { "text": "Must be independent of the area being audited", "correct": true, "explanation": "Per Section 5.2, auditors must be independent of the area being audited to ensure objectivity." },
         { "text": "Must be a senior manager", "explanation": "Seniority is not a requirement; independence and training are." },
-        { "text": "Must have an external auditing certification", "explanation": "Internal audit training on ISO 19011 principles is required, not external certification." }
-      ]
-    },
-    {
-      "type": "single-choice",
-      "text": "Within how many business days must the audit report be prepared after the audit?",
-      "options": [
-        { "text": "5 business days", "explanation": "The requirement is 10 business days, not 5." },
-        { "text": "10 business days", "correct": true, "explanation": "Per Section 5.5, the lead auditor prepares the audit report within 10 business days." },
-        { "text": "20 business days", "explanation": "20 days exceeds the requirement." },
-        { "text": "30 business days", "explanation": "30 days exceeds the requirement." }
+        { "text": "Must have external ISO certification", "explanation": "Internal audit training on ISO 19011 principles is required, not external certification." }
       ]
     },
     {
       "type": "true-false",
-      "text": "Observations identified during an audit require CAPA to be initiated.",
+      "text": "Observations identified during an internal audit require a CAPA to be initiated.",
       "correct": false,
-      "explanation": "Per Section 5.6, only major and minor findings require CAPA. Observations are opportunities for improvement but do not constitute nonconformances."
+      "explanation": "Per Section 5.4, only major and minor findings require CAPA. Observations are opportunities for improvement documented as recommendations, not nonconformances."
     },
     {
       "type": "single-choice",
-      "text": "How quickly must the auditee propose corrective actions for audit findings?",
+      "text": "How does PactoSigna support the connection between audit findings and corrective actions?",
       "options": [
-        { "text": "5 business days", "explanation": "5 days does not match the requirement." },
-        { "text": "10 business days", "explanation": "10 days does not match the requirement." },
-        { "text": "15 business days", "correct": true, "explanation": "Per Section 5.6, the auditee proposes corrective actions within 15 business days." },
-        { "text": "30 business days", "explanation": "30 days exceeds the allowed timeframe." }
+        { "text": "Findings are tracked in a spreadsheet outside the platform", "explanation": "PactoSigna provides integrated tracking within the Quality Events module." },
+        { "text": "The Quality Events module links audit findings to CAPA records with full traceability", "correct": true, "explanation": "Per Section 5.6, PactoSigna's Quality Events module links audit findings to CAPA records, maintaining full traceability from finding through corrective action to effectiveness verification." },
+        { "text": "Findings are emailed to the CAPA owner for manual entry", "explanation": "The linkage is managed within PactoSigna's integrated Quality Events module." },
+        { "text": "There is no connection between audit findings and CAPA", "explanation": "Major and minor findings require CAPA, and PactoSigna links them through the Quality Events module." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "What determines the audit frequency for a specific process?",
+      "text": "Within how many business days must the audit report be prepared after audit completion?",
       "options": [
-        { "text": "Process owner preference", "explanation": "Frequency is based on risk and previous findings, not preference." },
-        { "text": "Process risk and previous findings", "correct": true, "explanation": "Per Section 5.1, audit frequency is based on process risk and previous findings." },
-        { "text": "Number of employees in the area", "explanation": "Headcount is not a factor in determining audit frequency." },
-        { "text": "Alphabetical order of processes", "explanation": "Process order is irrelevant; risk and history determine frequency." }
+        { "text": "5 business days", "explanation": "5 days is shorter than the required timeframe." },
+        { "text": "10 business days", "correct": true, "explanation": "Per Section 5.5, the Lead Auditor shall prepare the audit report within 10 business days of audit completion." },
+        { "text": "20 business days", "explanation": "20 days exceeds the required timeframe." },
+        { "text": "30 business days", "explanation": "30 days exceeds the required timeframe." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Which PactoSigna features provide evidence for compliance audits?",
+      "options": [
+        { "text": "Only the document list page", "explanation": "Multiple features support audit evidence, not just the document list." },
+        { "text": "Records Page compiled views, audit trail exports, compliance packages, and training compliance data", "correct": true, "explanation": "Per Section 5.7, PactoSigna supports audits with compliance packages, Records Page views (RMF, V&V, DMR, DHR), audit trail exports, training data, and document status tracking." },
+        { "text": "Only the audit trail", "explanation": "The audit trail is one of several evidence sources available in PactoSigna." },
+        { "text": "PactoSigna does not provide audit evidence — it must be compiled manually", "explanation": "PactoSigna's compliance reporting module specifically supports audit export and evidence compilation." }
       ]
     }
   ]

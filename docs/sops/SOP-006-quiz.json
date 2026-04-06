@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
+      "text": "What PactoSigna feature provides compiled evidence views (Risk Management File, V&V, DMR, DHR) for management review?",
+      "options": [
+        { "text": "The Quality Events module", "explanation": "Quality Events manages complaints, NCs, and CAPAs — not compiled record views." },
+        { "text": "The Records Page", "correct": true, "explanation": "Per Section 5.4, PactoSigna's Records Page provides compiled views including Risk Management File, V&V, Design Master Record, and Device History Record." },
+        { "text": "The Training module", "explanation": "The Training module manages training tasks, not compiled evidence records." },
+        { "text": "The Document Sync engine", "explanation": "The sync engine imports documents from GitHub; it does not compile record views." }
+      ]
+    },
+    {
+      "type": "single-choice",
       "text": "What is the minimum frequency for scheduled management reviews?",
       "options": [
-        { "text": "Monthly", "explanation": "Monthly reviews are not required; the minimum is annually." },
-        { "text": "Quarterly", "explanation": "Quarterly reviews exceed the minimum requirement." },
-        { "text": "Annually", "correct": true, "explanation": "Per Section 5.1, management reviews are conducted at least annually, scheduled in Q1." },
-        { "text": "Every two years", "explanation": "Every two years does not meet the minimum annual requirement." }
+        { "text": "Monthly", "explanation": "Monthly exceeds the minimum requirement." },
+        { "text": "Quarterly", "explanation": "Quarterly exceeds the minimum requirement." },
+        { "text": "Annually", "correct": true, "explanation": "Per Section 5.1, management reviews shall be conducted at minimum annually, scheduled in Q1." },
+        { "text": "Every two years", "explanation": "Biennial reviews do not meet the annual minimum requirement." }
+      ]
+    },
+    {
+      "type": "true-false",
+      "text": "A management review can be triggered outside the annual schedule by events such as major nonconformances or regulatory authority findings.",
+      "correct": true,
+      "explanation": "Per Section 5.1, additional reviews shall be triggered by major nonconformances, regulatory findings, significant organizational changes, or product recalls."
+    },
+    {
+      "type": "single-choice",
+      "text": "Where does the Quality Management Representative track management review action items in PactoSigna?",
+      "options": [
+        { "text": "In the CAPA module", "explanation": "Management review actions are tracked in Quality Reviews, not the CAPA module." },
+        { "text": "In the Quality Reviews collection", "correct": true, "explanation": "Per Section 5.6, each action item has an assigned owner and target completion date, tracked in PactoSigna's Quality Reviews collection." },
+        { "text": "In a spreadsheet outside PactoSigna", "explanation": "Action items are tracked within PactoSigna for auditability." },
+        { "text": "In the Training module", "explanation": "The Training module is for training tasks, not management review actions." }
       ]
     },
     {
       "type": "single-choice",
       "text": "How far in advance must the agenda and input data be distributed before a management review?",
       "options": [
-        { "text": "1 business day", "explanation": "One day does not allow adequate preparation time." },
-        { "text": "5 business days", "correct": true, "explanation": "Per Section 5.4, agenda and input data are distributed at least 5 business days before the meeting." },
+        { "text": "1 business day", "explanation": "1 day does not allow adequate preparation time." },
+        { "text": "5 business days", "correct": true, "explanation": "Per Section 5.3, input data shall be distributed to attendees at least 5 business days before the review." },
         { "text": "10 business days", "explanation": "10 days exceeds the minimum requirement." },
-        { "text": "No advance distribution required", "explanation": "Advance distribution is required to allow attendees to prepare." }
+        { "text": "No advance distribution is required", "explanation": "Advance distribution is required to allow attendees to prepare." }
       ]
-    },
-    {
-      "type": "true-false",
-      "text": "A management review can be triggered by a major nonconformance outside the annual schedule.",
-      "correct": true,
-      "explanation": "Per Section 5.1, reviews are also conducted after significant events including major nonconformances, regulatory findings, product recalls, or organizational changes."
     },
     {
       "type": "single-choice",
       "text": "Which of the following is NOT a required management review input?",
       "options": [
-        { "text": "Internal and external audit results", "explanation": "Audit results are a required input per Section 5.3." },
-        { "text": "Customer feedback and complaint trends", "explanation": "Customer feedback is a required input per Section 5.3." },
-        { "text": "Individual employee performance reviews", "correct": true, "explanation": "Individual performance reviews are not a management review input. The focus is on QMS processes, not individual performance." },
-        { "text": "CAPA status and effectiveness", "explanation": "CAPA status is a required input per Section 5.3." }
-      ]
-    },
-    {
-      "type": "single-choice",
-      "text": "Within how many business days must meeting minutes be distributed after the review?",
-      "options": [
-        { "text": "1 business day", "explanation": "The requirement is 5 business days, not 1." },
-        { "text": "3 business days", "explanation": "The requirement is 5 business days." },
-        { "text": "5 business days", "correct": true, "explanation": "Per Section 5.6, meeting minutes are distributed within 5 business days." },
-        { "text": "10 business days", "explanation": "10 days exceeds the requirement stated in the SOP." }
+        { "text": "CAPA status and effectiveness from PactoSigna's Quality Events module", "explanation": "CAPA status is a required input per Section 5.3." },
+        { "text": "Training compliance from PactoSigna's Training module", "explanation": "Training compliance is a required input per Section 5.3." },
+        { "text": "Individual employee performance ratings", "correct": true, "explanation": "Individual performance ratings are not a management review input. The review focuses on QMS processes, not individual performance." },
+        { "text": "Quality objectives progress from PactoSigna's Quality Objectives entity", "explanation": "Quality objectives progress is a required input per Section 5.3." }
       ]
     }
   ]

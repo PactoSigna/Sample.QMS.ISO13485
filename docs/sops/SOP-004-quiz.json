@@ -2,49 +2,59 @@
   "passingScore": 80,
   "questions": [
     {
-      "type": "multi-choice",
-      "text": "Which of the following are valid sources for CAPA initiation? (Select all that apply)",
+      "type": "single-choice",
+      "text": "What are the six states in PactoSigna's CAPA state machine?",
       "options": [
-        { "text": "Customer complaints", "correct": true, "explanation": "Customer complaints are a defined CAPA source." },
-        { "text": "Internal/external audit findings", "correct": true, "explanation": "Audit findings are a defined CAPA source." },
-        { "text": "Risk management findings", "correct": true, "explanation": "Risk management findings are a defined CAPA source." },
-        { "text": "Employee performance reviews", "explanation": "Performance reviews are not listed as a CAPA initiation source." }
+        { "text": "open → investigation → action_plan → implementation → verification → closed", "correct": true, "explanation": "Per Section 5.2, PactoSigna manages the CAPA lifecycle through these six defined states with electronic signature gates at key transitions." },
+        { "text": "new → assigned → in_progress → review → approved → complete", "explanation": "These are not the correct CAPA states in PactoSigna." },
+        { "text": "draft → open → active → resolved → verified → archived", "explanation": "These are not the correct CAPA states in PactoSigna." },
+        { "text": "created → investigating → planning → executing → checking → done", "explanation": "These are not the correct CAPA states in PactoSigna." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "What is the first step in the CAPA investigation process?",
+      "text": "At which CAPA state transitions does PactoSigna require electronic signatures?",
       "options": [
-        { "text": "Perform root cause analysis", "explanation": "Root cause analysis is step 2; documenting the problem comes first." },
-        { "text": "Document the problem description", "correct": true, "explanation": "Per the Investigation section, documenting the problem description is the first step." },
-        { "text": "Assign owners and target dates", "explanation": "Assigning owners happens during action planning, not investigation." },
-        { "text": "Define corrective action", "explanation": "Corrective actions are defined during action planning, after investigation." }
-      ]
-    },
-    {
-      "type": "single-choice",
-      "text": "What happens if a CAPA is verified as not effective?",
-      "options": [
-        { "text": "Close the CAPA anyway", "explanation": "Ineffective CAPAs must not be closed." },
-        { "text": "Escalate", "correct": true, "explanation": "Per the Verification section, if not effective the CAPA must be escalated." },
-        { "text": "Delete the CAPA record", "explanation": "CAPA records must be maintained for audit purposes." },
-        { "text": "Wait 30 days and re-check", "explanation": "The SOP requires escalation, not waiting." }
+        { "text": "Only at closure", "explanation": "Signatures are required at three transitions, not just closure." },
+        { "text": "At every state transition", "explanation": "Signatures are required at three specific transitions, not all of them." },
+        { "text": "investigation → action_plan, implementation → verification, and verification → closed", "correct": true, "explanation": "Per Section 5.2, electronic signatures are required at these three key transitions to ensure accountability." },
+        { "text": "open → investigation and verification → closed only", "explanation": "The implementation → verification transition also requires a signature." }
       ]
     },
     {
       "type": "true-false",
-      "text": "Affected documents should be updated per SOP-001 (Document Control) during CAPA implementation.",
+      "text": "PactoSigna supports automatic escalation from Complaint to Nonconformance to CAPA, maintaining full traceability across the escalation chain.",
       "correct": true,
-      "explanation": "Per the Implementation section, affected documents are updated per SOP-001."
+      "explanation": "Per Section 6, PactoSigna's Quality Events module links quality events across the Complaint → NC → CAPA workflow with full traceability."
     },
     {
       "type": "single-choice",
-      "text": "Which root cause analysis techniques are mentioned in the CAPA procedure?",
+      "text": "What happens if CAPA effectiveness verification determines the actions were not effective?",
       "options": [
-        { "text": "5 Whys and fishbone diagram", "correct": true, "explanation": "The Investigation section lists '5 Whys, fishbone, etc.' as root cause analysis techniques." },
-        { "text": "Pareto analysis and scatter plot", "explanation": "These are statistical tools not specifically mentioned in the SOP." },
-        { "text": "Monte Carlo simulation", "explanation": "Monte Carlo simulation is not mentioned in the CAPA procedure." },
-        { "text": "Design of experiments (DOE)", "explanation": "DOE is not mentioned in the CAPA procedure." }
+        { "text": "The CAPA is closed with a note about ineffectiveness", "explanation": "Ineffective CAPAs must not be closed; they require re-investigation." },
+        { "text": "The CAPA is returned to the investigation state for re-analysis", "correct": true, "explanation": "Per Section 5.6, if verification determines actions were not effective, the CAPA is returned to investigation and escalated to management if patient safety is involved." },
+        { "text": "A new CAPA is opened and the original is deleted", "explanation": "CAPA records are never deleted. The existing CAPA is re-opened for re-investigation." },
+        { "text": "The CAPA owner is replaced and the process restarts", "explanation": "The process involves re-analysis, not replacement of the owner." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "What is the minimum monitoring period for effectiveness verification of minor issues?",
+      "options": [
+        { "text": "7 days", "explanation": "7 days is too short for meaningful effectiveness verification." },
+        { "text": "30 days", "correct": true, "explanation": "Per Section 5.6, the minimum monitoring period is 30 days for minor issues and 90 days for major issues." },
+        { "text": "90 days", "explanation": "90 days is the monitoring period for major issues, not minor ones." },
+        { "text": "180 days", "explanation": "180 days exceeds the minimum for both minor and major issues." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Which root cause analysis methods are recommended in this procedure?",
+      "options": [
+        { "text": "5 Whys, Fishbone (Ishikawa), Fault Tree Analysis, Is/Is Not Analysis", "correct": true, "explanation": "Per Section 5.3, these four methods are listed with guidance on when to use each one." },
+        { "text": "Pareto analysis, scatter plots, and control charts", "explanation": "These are statistical tools, not the root cause analysis methods listed in the SOP." },
+        { "text": "Monte Carlo simulation and regression analysis", "explanation": "These are not root cause analysis methods listed in the SOP." },
+        { "text": "Only 5 Whys is permitted", "explanation": "Multiple methods are available; the choice depends on the nature of the problem." }
       ]
     }
   ]

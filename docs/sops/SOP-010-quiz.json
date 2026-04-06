@@ -3,48 +3,58 @@
   "questions": [
     {
       "type": "single-choice",
-      "text": "Within how many business days must a potential complaint be logged after receipt?",
+      "text": "What are the four states in PactoSigna's complaint state machine?",
       "options": [
-        { "text": "Same day", "explanation": "While prompt logging is important, the requirement is within 1 business day." },
-        { "text": "1 business day", "correct": true, "explanation": "Per Section 5.3, all potential complaints are logged within 1 business day of receipt." },
-        { "text": "3 business days", "explanation": "3 business days is the assessment timeframe, not the logging timeframe." },
+        { "text": "new → assigned → resolved → archived", "explanation": "These are not the correct complaint states in PactoSigna." },
+        { "text": "received → investigation → disposition → closed", "correct": true, "explanation": "Per Section 5.3, PactoSigna manages complaints through four states: received → investigation → disposition → closed." },
+        { "text": "open → in_progress → review → complete", "explanation": "These are not the correct complaint states in PactoSigna." },
+        { "text": "draft → active → resolved → done", "explanation": "These are not the correct complaint states in PactoSigna." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "Within how many business days must a potential complaint be logged in PactoSigna after receipt?",
+      "options": [
+        { "text": "Same day (immediately)", "explanation": "While prompt logging is important, the requirement is within 1 business day." },
+        { "text": "1 business day", "correct": true, "explanation": "Per Section 5.2, all potential complaints shall be logged within 1 business day of receipt." },
+        { "text": "3 business days", "explanation": "3 business days is the assessment timeline, not the logging timeline." },
         { "text": "5 business days", "explanation": "5 business days exceeds the logging requirement." }
       ]
     },
     {
-      "type": "single-choice",
-      "text": "What is the maximum investigation time for a critical complaint?",
-      "options": [
-        { "text": "5 days", "explanation": "5 days is not the investigation timeframe for critical complaints." },
-        { "text": "15 days", "correct": true, "explanation": "Per Section 5.5, critical complaint investigations must be completed within 15 days." },
-        { "text": "30 days", "explanation": "30 days is the standard timeframe; critical complaints require 15 days." },
-        { "text": "60 days", "explanation": "60 days exceeds the allowed investigation period." }
-      ]
-    },
-    {
       "type": "true-false",
-      "text": "A feature request from a customer should be classified as a complaint.",
-      "correct": false,
-      "explanation": "Per Section 3, a complaint alleges deficiencies in the device. A feature request is feedback, not a complaint. However, if a feature request reveals a safety concern, it should be escalated for complaint evaluation."
+      "text": "PactoSigna supports automatic escalation from Complaint to Nonconformance when severity warrants, and from NC to CAPA for systemic issues.",
+      "correct": true,
+      "explanation": "Per Section 5.6, PactoSigna supports Complaint → NC auto-escalation when severity warrants, and NC → CAPA escalation for systemic issues requiring root cause elimination."
     },
     {
       "type": "single-choice",
-      "text": "How often are complaint trends analyzed?",
+      "text": "What is the maximum investigation timeline for a critical complaint?",
       "options": [
-        { "text": "Monthly", "explanation": "Monthly analysis exceeds the minimum requirement." },
-        { "text": "Quarterly", "correct": true, "explanation": "Per Section 5.8, complaint trends are analyzed quarterly." },
-        { "text": "Annually", "explanation": "Annual analysis does not meet the quarterly requirement." },
-        { "text": "Only during management reviews", "explanation": "Trend analysis is quarterly; results feed into management review." }
+        { "text": "5 business days", "explanation": "5 days is not the investigation timeline for any severity level." },
+        { "text": "15 business days", "correct": true, "explanation": "Per Section 5.5, critical complaint investigations must be completed within 15 business days." },
+        { "text": "30 business days", "explanation": "30 business days is the timeline for major complaints, not critical ones." },
+        { "text": "60 business days", "explanation": "60 business days is the timeline for minor complaints." }
       ]
     },
     {
       "type": "single-choice",
-      "text": "What must happen immediately when a critical complaint is received?",
+      "text": "What must happen within 48 hours when a critical complaint with potential patient safety risk is received?",
       "options": [
-        { "text": "Notify the CEO", "explanation": "CEO notification is not the immediate required action." },
-        { "text": "Issue a product recall", "explanation": "Recalls are not automatic; assessment must occur first." },
-        { "text": "Assess for regulatory reporting requirements", "correct": true, "explanation": "Per Section 5.4, critical complaints trigger immediate assessment for regulatory reporting per SOP-012." },
-        { "text": "Assign to engineering for code review", "explanation": "Engineering assignment happens during investigation, not as the immediate action." }
+        { "text": "The complaint must be fully investigated and closed", "explanation": "Full investigation takes longer; the 48-hour requirement is for regulatory assessment." },
+        { "text": "A regulatory reporting assessment must be completed", "correct": true, "explanation": "Per Section 5.4, critical complaints require investigation within 24 hours and regulatory assessment within 48 hours, covering EU MDR vigilance, FDA MDR/MAUDE, and other jurisdiction requirements." },
+        { "text": "A product recall must be initiated", "explanation": "Recalls are not automatic; regulatory assessment comes first." },
+        { "text": "The CEO must be personally notified", "explanation": "CEO notification is not the specific 48-hour requirement; regulatory assessment is." }
+      ]
+    },
+    {
+      "type": "single-choice",
+      "text": "How often are complaint trends analyzed in PactoSigna?",
+      "options": [
+        { "text": "Monthly", "explanation": "Monthly exceeds the minimum quarterly requirement." },
+        { "text": "Quarterly", "correct": true, "explanation": "Per Section 5.8, complaint trends are analyzed quarterly using PactoSigna's Quality Events reporting, covering volume, root causes, time to closure, and escalation rates." },
+        { "text": "Annually", "explanation": "Annual analysis does not meet the quarterly requirement." },
+        { "text": "Only during management reviews", "explanation": "Quarterly analysis is independent of the management review schedule, though results feed into management review." }
       ]
     }
   ]

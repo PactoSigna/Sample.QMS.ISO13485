@@ -2,12 +2,13 @@
 id: SOP-010
 title: Customer Feedback and Complaint Handling
 status: approved
-author: quality@example.com
+author: quality
 reviewers:
   - engineering
+  - quality
   - regulatory
 approvers:
-  - quality-lead
+  - quality
 training:
   required_departments:
     - Quality
@@ -18,108 +19,198 @@ training:
 
 # SOP-010: Customer Feedback and Complaint Handling
 
+> **Document Type**: Standard Operating Procedure
+> **Regulatory Basis**: ISO 13485:2016 Sections 8.2.1, 8.2.2
+> **Status**: Effective
+> **Last Updated**: 2026-04-05
+> **Owner**: PactoSigna Quality
+> **Review Cycle**: Annual
+
 ## 1. Purpose
 
-Collect, evaluate, and act on customer feedback. Investigate and resolve complaints in a timely manner. Ensure potential safety issues are identified and escalated appropriately.
+This procedure establishes the requirements for collecting, evaluating, investigating, and resolving customer feedback and complaints related to medical device software products. It defines how PactoSigna's Quality Events module manages the complete complaint lifecycle with automated escalation paths, audit trails, and regulatory reporting support.
 
 ## 2. Scope
 
-Applies to all feedback and complaints received from customers, users, healthcare professionals, distributors, and regulatory authorities related to medical device software products.
+This SOP applies to all feedback and complaints received from:
+
+- Customers and end users
+- Healthcare professionals
+- Distributors and partners
+- Regulatory authorities
+- Internal sources (employees identifying field issues)
+
+This SOP covers the full lifecycle from initial receipt through investigation, determination, and closure, including escalation to nonconformance and CAPA processes when warranted.
 
 ## 3. Definitions
 
 | Term | Definition |
 | --- | --- |
-| Feedback | Any communication from a customer about the product, positive or negative, that does not allege a specific deficiency |
-| Complaint | Any written, electronic, or oral communication that alleges deficiencies related to identity, quality, durability, reliability, usability, safety, or performance of a medical device after release |
-| Adverse Event | An incident involving a medical device that led to or might have led to death or serious deterioration of health |
+| **Feedback** | Any communication from a customer about the product, positive or negative, that does not allege a specific deficiency in safety, performance, or quality |
+| **Complaint** | Any written, electronic, or oral communication that alleges deficiencies related to identity, quality, durability, reliability, usability, safety, or performance of a medical device after release |
+| **Adverse Event** | An incident involving a medical device that led to or might have led to death or serious deterioration in health of a patient, user, or other person |
+| **Quality Event** | A complaint, nonconformance, or CAPA record managed within PactoSigna's Quality Events module |
+| **Vigilance Report** | A report submitted to a regulatory authority regarding a serious incident or field safety corrective action |
 
-## 4. Responsibilities
+## 4. Roles and Responsibilities
 
-- **Quality**: Receive and log complaints, conduct investigations, determine regulatory reporting needs, maintain complaint database
-- **Engineering**: Provide technical assessment for complaint investigations
-- **Regulatory**: Assess regulatory reporting requirements, submit vigilance reports
-- **Customer Support**: Collect and forward feedback and complaints to Quality
+| Role | Responsibilities |
+| --- | --- |
+| **Quality** | Receives and logs complaints in PactoSigna; conducts or coordinates investigations; determines regulatory reporting needs; monitors complaint trends; ensures timely closure |
+| **Engineering** | Provides technical assessment for complaint investigations; identifies root causes in software; assesses impact on other product versions |
+| **Regulatory** | Assesses regulatory reporting requirements (MDR vigilance, FDA MDR/MAUDE); prepares and submits vigilance reports; monitors regulatory feedback |
+| **Customer Support** | Collects and forwards feedback and complaints to Quality; provides initial triage; maintains communication with complainants |
+| **Management** | Reviews complaint trends during management review; allocates resources for investigation and resolution |
 
 ## 5. Procedure
 
 ### 5.1 Feedback Collection
 
-Feedback is collected through:
+Feedback shall be collected through:
 
-- Customer support channels (email, tickets)
+- Customer support channels (email, tickets, phone)
 - User surveys and satisfaction questionnaires
 - Sales and account management interactions
 - App store reviews and ratings
 - User analytics and usage data
+- Post-market surveillance activities
 
-### 5.2 Feedback Analysis
+Feedback that does not allege a specific deficiency shall be logged, categorized, and analyzed for trends. Safety concerns identified in feedback shall be immediately escalated to Quality for complaint evaluation.
 
-1. Feedback is categorized: feature request, usability, performance, satisfaction, safety concern
-2. Safety concerns are immediately escalated to Quality for complaint evaluation
-3. Feedback trends are analyzed quarterly
-4. Trending data is input to management review (per [SOP-006](SOP-006-management-review.md))
+### 5.2 Complaint Receipt and Logging
 
-### 5.3 Complaint Receipt and Logging
+1. All potential complaints shall be logged in PactoSigna's Quality Events module within **1 business day** of receipt.
+2. PactoSigna automatically assigns a unique complaint identifier and sets the initial state to `received`.
+3. The complaint record shall include:
+   - Date and method of receipt
+   - Source (complainant identity, if available)
+   - Product and version affected
+   - Description of the alleged deficiency
+   - Initial severity assessment
+4. PactoSigna's audit trail records the creation event with the logger's identity and timestamp.
 
-1. All potential complaints are logged within 1 business day of receipt
-2. Complaint record includes: date received, source, product/version, description, initial severity assessment
-3. Quality assigns a unique complaint ID
+### 5.3 Complaint State Machine
 
-### 5.4 Complaint Assessment
+PactoSigna manages the complaint lifecycle through a defined state machine:
 
-Within 3 business days of receipt, Quality determines:
+| State | Description | Exit Criteria |
+| --- | --- | --- |
+| `received` | Complaint logged; awaiting assessment | Quality completes initial assessment |
+| `investigation` | Root cause analysis and impact assessment in progress | Investigation findings documented; determination made |
+| `disposition` | Actions determined and being implemented | All required actions completed; regulatory reporting submitted if needed |
+| `closed` | Complaint fully resolved | Quality approves closure; complainant notified |
 
-1. Is this a complaint per the definition? (If not, categorize as feedback)
-2. Initial severity classification:
-   - **Critical**: Potential patient safety risk or adverse event
-   - **Major**: Significant functional impact or regulatory non-compliance
-   - **Minor**: Low impact, cosmetic, or inconvenience
+### 5.4 Initial Assessment
 
-3. Critical complaints trigger immediate assessment for regulatory reporting (per [SOP-012](SOP-012-regulatory-reporting.md))
+Within **3 business days** of receipt, Quality shall determine:
+
+1. **Is this a complaint?** If the communication does not allege a specific deficiency, classify as feedback and track per Section 5.1.
+2. **Severity classification:**
+
+   | Severity | Criteria | Response Timeline |
+   | --- | --- | --- |
+   | **Critical** | Potential patient safety risk; adverse event reported or plausible | Investigation within 24 hours; regulatory assessment within 48 hours |
+   | **Major** | Significant functional impact; regulatory non-compliance; data integrity risk | Investigation within 5 business days |
+   | **Minor** | Low impact; cosmetic issue; inconvenience with workaround | Investigation within 30 business days |
+
+3. **Regulatory reporting assessment**: Critical complaints shall trigger immediate assessment for:
+   - EU MDR vigilance reporting (Article 87)
+   - FDA Medical Device Reporting (21 CFR Part 803)
+   - FDA MAUDE database reporting
+   - Other jurisdiction-specific requirements
 
 ### 5.5 Complaint Investigation
 
-1. Quality assigns investigator (typically Engineering for technical issues)
-2. Investigation scope: root cause analysis, scope of impact, risk assessment
-3. Investigation to be completed within 30 days (critical: 15 days)
-4. Investigation documented in complaint record
+1. Quality shall assign an investigator (typically Engineering for software-related issues).
+2. The investigation shall determine:
+   - Root cause of the alleged deficiency
+   - Whether the deficiency is confirmed or not substantiated
+   - Scope of impact (other versions, other customers, other product areas)
+   - Risk assessment of the deficiency
+3. Investigation findings shall be documented in the complaint record in PactoSigna.
+4. Investigation timelines:
+   - Critical: Complete within **15 business days**
+   - Major: Complete within **30 business days**
+   - Minor: Complete within **60 business days**
 
-### 5.6 Determination and Action
+### 5.6 Determination and Escalation
 
-Based on investigation:
+Based on investigation findings:
 
-1. **Corrective action needed?** → Initiate CAPA per [SOP-004](SOP-004-capa.md)
-2. **Regulatory reporting needed?** → Follow [SOP-012](SOP-012-regulatory-reporting.md)
-3. **Advisory notice needed?** → Follow [SOP-012](SOP-012-regulatory-reporting.md)
-4. **Nonconforming product?** → Follow [SOP-011](SOP-011-nonconforming-product.md)
-5. **No action needed?** → Document rationale for no action
+| Determination | Action | PactoSigna Workflow |
+| --- | --- | --- |
+| Corrective action needed | Initiate CAPA per [SOP-004](SOP-004-capa.md) | Complaint -> CAPA escalation in Quality Events |
+| Nonconforming product identified | Initiate NC record | Complaint -> NC auto-escalation when severity warrants |
+| Systemic issue identified | NC -> CAPA escalation | NC -> CAPA path for systemic issues requiring root cause elimination |
+| Regulatory reporting required | Submit vigilance report | Regulatory assessment documented in complaint record |
+| No action required | Document rationale | Justification recorded with Quality approval |
+
+PactoSigna supports automatic escalation from Complaint to Nonconformance when severity warrants, and from NC to CAPA for systemic issues, maintaining full traceability across the escalation chain.
 
 ### 5.7 Complaint Closure
 
-1. All actions completed and verified
-2. Complainant notified of resolution (where contact information available)
-3. Complaint record closed by Quality
+1. All planned actions shall be completed and verified.
+2. The complainant shall be notified of the resolution (where contact information is available).
+3. Quality shall close the complaint in PactoSigna with documented rationale.
+4. PactoSigna's audit trail records the closure event with all supporting evidence.
 
-### 5.8 Trending
+### 5.8 Trending and Post-Market Surveillance
 
-1. Complaint trends analyzed quarterly (type, severity, product area, root cause category)
-2. Adverse trends escalated to CAPA
-3. Safety signals escalated to risk management for update
-4. Trends reported in management review
+1. Complaint trends shall be analyzed quarterly using PactoSigna's Quality Events reporting:
+   - Complaint volume by type, severity, and product area
+   - Root cause category distribution
+   - Time to closure metrics
+   - Escalation rates (complaint -> NC -> CAPA)
+2. Adverse trends shall be escalated to:
+   - CAPA process for systemic corrective action
+   - Risk management for risk assessment update
+   - Post-market surveillance review
+3. Post-market surveillance data, including complaint trends, shall be documented using PactoSigna's post-market surveillance and post-market feedback document types.
+4. Trending data shall be reported in management review per [SOP-006](SOP-006-management-review.md).
 
-## 6. Records
+### 5.9 Regulatory Reporting
 
-- Feedback log
-- Complaint records (including investigation and determination)
-- Complaint trend reports
-- Regulatory reporting decisions
+1. When regulatory reporting is required, Regulatory shall:
+   - Prepare the vigilance report per applicable jurisdiction requirements
+   - Submit within regulatory timelines (EU MDR: 15 days for serious incidents; FDA MDR: 30 days or 5-day report for emergencies)
+   - Document the submission in the complaint record in PactoSigna
+2. PactoSigna's audit trail provides evidence of reporting timeliness for regulatory audits.
+3. Regulatory reporting decisions (including decisions not to report, with rationale) shall be documented in the complaint record.
 
-## 7. References
+## 6. PactoSigna Platform Implementation
 
-- ISO 13485:2016 Sections 8.2.1, 8.2.2
-- 21 CFR 820.198
-- EU MDR 2017/745 Article 87
-- [SOP-004](SOP-004-capa.md) — CAPA
-- [SOP-011](SOP-011-nonconforming-product.md) — Nonconforming Product
-- [SOP-012](SOP-012-regulatory-reporting.md) — Regulatory Reporting
+| Complaint Handling Requirement | PactoSigna Feature |
+| --- | --- |
+| Complaint lifecycle | Quality Events module with 4-state complaint state machine (`received` -> `investigation` -> `disposition` -> `closed`) |
+| Unique identification | Automatic complaint ID assignment |
+| Escalation paths | Complaint -> NC auto-escalation; NC -> CAPA escalation for systemic issues |
+| Investigation tracking | Investigation findings documented within the complaint quality event record |
+| Trend analysis | Quality Events reporting with complaint trends by type, severity, period, and root cause |
+| Post-market surveillance | PMS and post-market feedback document types for trend documentation |
+| Regulatory reporting evidence | Audit trail captures reporting decisions and submission timestamps |
+| Audit trail | Immutable log of all complaint state changes, actions, and decisions |
+| Management review input | Complaint trends aggregated for management review dashboard |
+
+## 7. Related Documents
+
+- [SOP-004](SOP-004-capa.md) -- Corrective and Preventive Action
+- [SOP-006](SOP-006-management-review.md) -- Management Review
+- [SOP-008](SOP-008-internal-audit.md) -- Internal Audit
+- [POL-001](../policies/POL-001-quality-policy.md) -- Quality Policy
+
+## 8. References
+
+| Reference | Description |
+| --- | --- |
+| ISO 13485:2016 Section 8.2.1 | Feedback |
+| ISO 13485:2016 Section 8.2.2 | Complaint handling |
+| 21 CFR Part 820.198 | Complaint files |
+| 21 CFR Part 803 | Medical device reporting |
+| EU MDR 2017/745 Article 87 | Vigilance reporting |
+
+## 9. Revision History
+
+| Version | Date | Author | Description |
+| --- | --- | --- | --- |
+| 1.0 | 2026-01-15 | PactoSigna Quality | Initial release |
+| 2.0 | 2026-04-05 | PactoSigna Quality | Rewritten with PactoSigna platform integration -- Quality Events complaint workflow, auto-escalation, post-market surveillance, regulatory reporting support |
